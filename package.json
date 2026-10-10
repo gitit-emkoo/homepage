@@ -17,6 +17,8 @@
     "build:wolse-landlord": "npm run build -w wolse-landlord",
     "dev:coreset": "npm run dev -w coreset",
     "build:coreset": "npm run build -w coreset",
+    "dev:pickplay": "npm run dev -w pickplay",
+    "build:pickplay": "npm run build -w pickplay",
     "build:all": "npm run build --workspaces",
     "lint:all": "npm run lint --workspaces"
   },

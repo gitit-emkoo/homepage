@@ -15,7 +15,8 @@ homepage/
 │   ├── jaemubox/       # 재무박스 (kwcc2020-99888.waveon.me)
 │   ├── wolse-tenant/   # 월세 스위치 임차인용 (kwcc2020-100047.waveon.me)
 │   ├── wolse-landlord/ # 월세 스위치 임대인용 (kwcc2020-100001.waveon.me)
-│   └── coreset/        # www.coreset.im (디자인 새로 작업)
+│   ├── coreset/        # www.coreset.im (디자인 새로 작업)
+│   └── pickplay/       # pickplay.waveon.me (앱 소개 + 약관·개인정보·고객센터)
 ├── tools/
 │   ├── waveon-extract.mjs    # 예전 Waveon 페이지(블록형) → 디자인 데이터·이미지 추출
 │   ├── waveon-text.mjs       # 추출 데이터에서 긴 글(약관 등) 꺼내기
