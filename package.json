@@ -13,6 +13,8 @@
     "build:jaemubox": "npm run build -w jaemubox",
     "dev:wolse-tenant": "npm run dev -w wolse-tenant",
     "build:wolse-tenant": "npm run build -w wolse-tenant",
+    "dev:wolse-landlord": "npm run dev -w wolse-landlord",
+    "build:wolse-landlord": "npm run build -w wolse-landlord",
     "build:all": "npm run build --workspaces",
     "lint:all": "npm run lint --workspaces"
   }
