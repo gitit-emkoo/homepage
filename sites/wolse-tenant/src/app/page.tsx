@@ -1,48 +1,43 @@
-import BenefitsSection from "@/components/BenefitsSection";
-import BrandLogo from "@/components/BrandLogo";
-import GuideSection from "@/components/GuideSection";
-import Header from "@/components/Header";
+import Image from "next/image";
+import FooterSection from "@/components/FooterSection";
 import HeroSection from "@/components/HeroSection";
-import PartnerSection from "@/components/PartnerSection";
-import RentCalculationSection from "@/components/RentCalculationSection";
+import InterestFormSection from "@/components/InterestFormSection";
+import ProblemSolutionSection from "@/components/ProblemSolutionSection";
+import ProcessSection from "@/components/ProcessSection";
 import SimulationSection from "@/components/SimulationSection";
-import WorkflowSection from "@/components/WorkflowSection";
+import TrustSection from "@/components/TrustSection";
 
 export default function Home() {
   return (
-    <div className="site-shell">
-      <div className="notice">
-        {"파트너 모집 중 "}
-        <span>·</span>
-        {" 선착순 30곳 한정 평생 혜택지급 "}
-        <a href="#apply">문의 바로가기 →</a>
-      </div>
-      <Header />
-      <main>
+    <div className="app-shell">
+      <header className="main-header">
+        <div className="content nav">
+          <a className="brand" href="#top" aria-label="월세 스위치 홈">
+            <Image src="/images/logo.png" alt="월세 스위치 아이콘" width={1476} height={590} />{" "}
+            <span>월세스위치</span>
+          </a>
+          <nav>
+            <a href="#how">방식 소개</a>
+            <a href="#simulation">예시 계산</a>
+            <a href="#safe">안심 정산</a>
+          </nav>
+        </div>
+      </header>
+      <main id="top">
         <HeroSection />
-        <div className="authority">
-          <b>임차인의 초기 부담을 낮추고, 임대인의 공실 위험을 줄입니다.</b>
+        <div id="how">
+          <ProblemSolutionSection />
         </div>
-        <BenefitsSection />
-        <WorkflowSection />
-        <GuideSection />
-        <SimulationSection />
-        <RentCalculationSection />
-        <PartnerSection />
+        <div id="simulation">
+          <SimulationSection />
+        </div>
+        <div id="safe">
+          <TrustSection />
+        </div>
+        <ProcessSection />
+        <InterestFormSection />
       </main>
-      <footer>
-        <div className="brand">
-          <BrandLogo />
-          <span>월세스위치</span>
-        </div>
-        <p />
-        <div className="footer-links">
-          <a href="#workflow">플랫폼 소개</a>
-          <a href="#benefits">중개사 혜택</a>
-          <a href="#apply">파트너 신청</a>
-        </div>
-        <small>© 2026 월세 스위치. All rights reserved.</small>
-      </footer>
+      <FooterSection />
     </div>
   );
 }

@@ -19,4 +19,5 @@ export const COMPANY = {
   name: "KWCC Co., Ltd.",
   bizNumber: "849-81-02606",
   address: "경기도 화성시 동탄대로 646-2 A-907",
+  email: "cokwcc@gmail.com",
 };

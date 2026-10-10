@@ -1,33 +1,39 @@
-const heroImage = "/images/hero-bg.png";
+import Image from "next/image";
+
 const HeroSection = () => (
-  <section
-    className="hero"
-    style={{
-      backgroundImage: `linear-gradient(90deg, rgba(18,25,30,.84) 0%, rgba(18,25,30,.65) 46%, rgba(18,25,30,.15) 76%), url(${heroImage})`,
-    }}
-  >
+  <section className="hero" id="top">
     <div className="hero-inner">
-      <div className="hero-copy">
-        <p className="eyebrow light" style={{ fontSize: "18px", lineHeight: 1.35 }}>
-          매출 연동 임대차 계약
-        </p>
-        <h1>
-          매출이 적은 달엔
-          <br />
-          월세도 낮아집니다.
-        </h1>
+      <h1>
+        매출연동 임대차
+        <br />
+        {"또 하나의 "}
+        <span className="hero-accent">중개 옵션이</span>
+        {" 추가 됩니다."}
+      </h1>
+      <p className="hero-copy">
+        대형 쇼핑몰 계약 방식에 소형 상가 특성을 더해 더 합리적인 하이브리드 임대차 거래
+        <br />{" "}
+      </p>
+      <div className="hero-actions">
+        <a className="btn btn-dark" href="#apply">
+          {"초기 파트너 신청 "}
+          <span>→</span>
+        </a>
+        <a className="text-link" href="#benefits">
+          {"중개사님 혜택 보기 "}
+          <span>↓</span>
+        </a>
       </div>
-      <aside className="trust-card" aria-label="거래 구조 안내">
-        <span className="trust-mark">✓</span>
-        <p className="tiny-label">PLATFORM PROTECTION</p>
-        <strong>
-          계약부터 정산 계산서 발행까지
-          <br />
-          플랫폼이 안전하게 보호합니다
-        </strong>
-        <p>매출 연동 방식으로 전환했을 때의 수익 구조를 함께 살펴보세요.</p>
-        <div className="trust-line" />
-      </aside>
+      <div className="hero-product">
+        <Image
+          src="/images/hero-product.png"
+          alt="매출연동 임대차의 자동 정산 및 계약 관리 플랫폼 화면"
+          width={1536}
+          height={1024}
+          sizes="(max-width: 1104px) 100vw, 1056px"
+          preload
+        />
+      </div>
     </div>
   </section>
 );

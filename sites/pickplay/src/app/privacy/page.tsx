@@ -80,7 +80,7 @@ export default function PrivacyPage() {
         <li>만 14세 미만 아동의 서비스 이용에 관한 보호자 동의 절차 또는 이용 제한 정책을 적용합니다.</li>
       </ul>
 
-      <h2>9. 문의처</h2>
+      <h2>8. 문의처</h2>
       <ul>
         <li>담당자: 구은모</li>
         <li>
@@ -89,7 +89,7 @@ export default function PrivacyPage() {
         <li>주소/전화: 010-4857-4876</li>
       </ul>
 
-      <h2>10. 정책 변경</h2>
+      <h2>9. 정책 변경</h2>
       <ul>
         <li>본 방침은 서비스/법령 변경에 따라 개정될 수 있으며, 변경 사항은 본 페이지에서 고지합니다.</li>
       </ul>

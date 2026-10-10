@@ -27,6 +27,12 @@ export default function Footer() {
             <dt>주소</dt>
             <dd>{COMPANY.address}</dd>
           </div>
+          <div>
+            <dt>이메일</dt>
+            <dd>
+              <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
+            </dd>
+          </div>
         </dl>
         <p className="footer__copy">© {COMPANY.name}</p>
       </div>
