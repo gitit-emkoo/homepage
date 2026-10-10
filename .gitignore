@@ -10,6 +10,9 @@ next-env.d.ts
 # 예전 작업물 (로컬 보관용)
 _archive/
 
+# tools/shot.mjs 캡처 결과
+shots/
+
 # misc
 .DS_Store
 *.pem

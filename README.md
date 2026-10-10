@@ -14,11 +14,13 @@ homepage/
 │   ├── passbook/       # www.passbook.today
 │   ├── jaemubox/       # 재무박스 (kwcc2020-99888.waveon.me)
 │   ├── wolse-tenant/   # 월세 스위치 임차인용 (kwcc2020-100047.waveon.me)
-│   └── wolse-landlord/ # 월세 스위치 임대인용 (kwcc2020-100001.waveon.me)
+│   ├── wolse-landlord/ # 월세 스위치 임대인용 (kwcc2020-100001.waveon.me)
+│   └── coreset/        # www.coreset.im (디자인 새로 작업)
 ├── tools/
 │   ├── waveon-extract.mjs    # 예전 Waveon 페이지(블록형) → 디자인 데이터·이미지 추출
 │   ├── waveon-text.mjs       # 추출 데이터에서 긴 글(약관 등) 꺼내기
-│   └── waveon-decompile.mjs  # 새 Waveon 앱(*.waveon.me) bundle.js → React 소스 복원
+│   ├── waveon-decompile.mjs  # 새 Waveon 앱(*.waveon.me) bundle.js → React 소스 복원
+│   └── shot.mjs              # 페이지 전체 캡처 (원본과 비교용, 결과는 shots/)
 └── _archive/           # 예전 작업물 보관
 ```
 
