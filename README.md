@@ -34,6 +34,13 @@ homepage/
 2. `sites/passbook` 의 설정 파일(`package.json`, `tsconfig.json`, `next.config.ts`, `eslint.config.mjs`, `.gitignore`)을 `sites/<새 이름>/` 으로 복사하고 `package.json` 의 `name` 을 바꾼다.
 3. 맨 위에서 `npm install` → 루트 `package.json` 에 `dev:<이름>`, `build:<이름>` 단축 명령을 추가한다.
 
+## 폼 (신청서 → 이메일)
+
+폼이 필요한 사이트는 [Web3Forms](https://web3forms.com) 로 접수 내용을 cokwcc@gmail.com 으로 받는다.
+모든 사이트가 키 하나를 같이 쓰고, 폼마다 숨김 필드 `subject` 에 `[사이트명] 신청서 이름` 을 넣어 메일 제목으로 구분한다.
+
+- 액세스 키: `f1e190f1-deb2-471d-8a5e-479412892ffc` (공개용 키라 코드에 들어가도 된다)
+
 ## 배포
 
 사이트마다 Cloudflare Pages / Netlify / Vercel 프로젝트를 하나씩 만들고, 모두 이 저장소에 연결한다.
