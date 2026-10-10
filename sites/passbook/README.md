@@ -46,6 +46,6 @@ public/images/  public/videos/
 
 ## 배포 (Cloudflare Pages / Netlify / Vercel 공통)
 
-- 프로젝트 루트 폴더: `sites/passbook`
-- 빌드 명령어: `npm run build`
-- 출력 폴더: `out`
+- 루트 폴더: (비움, 저장소 맨 위)
+- 빌드 명령어: `npm run build:passbook`
+- 출력 폴더: `sites/passbook/out`

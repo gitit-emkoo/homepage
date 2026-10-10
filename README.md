@@ -36,8 +36,12 @@ homepage/
 
 ## 배포
 
-사이트마다 Cloudflare Pages / Netlify / Vercel 프로젝트를 하나씩 만들고 아래처럼 설정한다.
+사이트마다 Cloudflare Pages / Netlify / Vercel 프로젝트를 하나씩 만들고, 모두 이 저장소에 연결한다.
+설치는 저장소 맨 위에서 해야 공유 패키지가 제대로 깔리므로 루트 폴더는 비워 둔다.
 
-- 루트 폴더: `sites/<사이트 이름>`
-- 빌드 명령어: `npm run build`
-- 출력 폴더: `out`
+- 루트 폴더: (비움, 저장소 맨 위)
+- 빌드 명령어: `npm run build:<사이트 이름>`
+- 출력 폴더: `sites/<사이트 이름>/out`
+- 빌드 감시 경로(Cloudflare Build watch paths): `sites/<사이트 이름>/*`, `package.json`, `package-lock.json`
+
+`main` 브랜치에 push 하면 바뀐 사이트만 자동으로 다시 빌드·배포된다.
