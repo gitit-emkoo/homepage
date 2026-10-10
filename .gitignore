@@ -1,0 +1,18 @@
+# dependencies (모든 사이트가 루트 node_modules를 공유)
+node_modules/
+
+# next.js 빌드 결과
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# 예전 작업물 (로컬 보관용)
+_archive/
+
+# misc
+.DS_Store
+*.pem
+.env*
+.vercel
+npm-debug.log*

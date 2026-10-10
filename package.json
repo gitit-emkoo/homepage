@@ -1,0 +1,15 @@
+{
+  "name": "homepage",
+  "private": true,
+  "workspaces": [
+    "sites/*"
+  ],
+  "scripts": {
+    "dev:badaya": "npm run dev -w badaya",
+    "build:badaya": "npm run build -w badaya",
+    "dev:passbook": "npm run dev -w passbook",
+    "build:passbook": "npm run build -w passbook",
+    "build:all": "npm run build --workspaces",
+    "lint:all": "npm run lint --workspaces"
+  }
+}
