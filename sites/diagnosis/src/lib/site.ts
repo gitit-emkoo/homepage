@@ -1,5 +1,5 @@
 // 도메인이 정해지면 SITE_URL만 바꾸면 된다.
-export const SITE_URL = "https://diagnosis.pages.dev";
+export const SITE_URL = "https://k-diagnosis.pages.dev";
 export const SITE_NAME = "바다야 사업자 자가진단";
 export const SITE_TITLE = "바다야 사업자 자가진단 - 내 사업, 지금 몇 점일까?";
 export const SITE_DESCRIPTION =
