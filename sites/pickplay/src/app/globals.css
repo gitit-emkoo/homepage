@@ -259,12 +259,104 @@ textarea {
 /* ---------- 기능 소개 ---------- */
 
 .features {
+  --slide: calc(100cqw - 56px);
+  container-type: inline-size;
+  padding: 32px 0 28px;
   background: var(--sky);
 }
 
+.features__track {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  padding: 4px calc((100cqw - var(--slide)) / 2) 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+.features__track::-webkit-scrollbar {
+  display: none;
+}
+
+.features__track:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: -2px;
+}
+
 .feature {
-  padding: 22px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 var(--slide);
+  padding: 26px 16px 28px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(8, 77, 160, 0.08);
   text-align: center;
+  scroll-snap-align: center;
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+}
+
+.feature.is-active {
+  opacity: 1;
+}
+
+.feature__copy {
+  margin-bottom: 20px;
+}
+
+.features__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.features__arrow {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding-bottom: 3px;
+  background: #fff;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(8, 77, 160, 0.12);
+  font-size: 26px;
+  line-height: 1;
+  color: var(--navy);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.features__arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.features__dots {
+  display: flex;
+  gap: 8px;
+}
+
+.features__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  background: rgba(8, 77, 160, 0.25);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.features__dot.is-active {
+  width: 24px;
+  background: var(--navy);
 }
 
 .feature__title {
@@ -303,8 +395,8 @@ textarea {
 }
 
 .feature__screen {
-  width: min(268px, 80%);
-  margin: 24px auto 0;
+  width: min(240px, 76%);
+  margin: auto auto 0;
 }
 
 .feature__screen img {
@@ -610,12 +702,22 @@ textarea {
     font-size: 24px;
   }
 
+  .features {
+    --slide: 440px;
+    padding: 56px 0 44px;
+  }
+
+  .features__track {
+    gap: 20px;
+    padding-bottom: 32px;
+  }
+
   .feature {
-    padding: 48px 24px 64px;
+    padding: 36px 28px;
   }
 
   .feature__screen {
-    width: 300px;
+    width: 280px;
   }
 
   .footer__info {
@@ -728,26 +830,33 @@ textarea {
   }
 
   .features {
-    padding: 48px 0;
+    --slide: min(1000px, 100cqw - 160px);
+    padding: 72px 0 56px;
+  }
+
+  .features__track {
+    gap: 28px;
+    padding-bottom: 36px;
   }
 
   .feature {
     display: grid;
-    grid-template-columns: 1fr 320px;
+    grid-template-columns: 1fr 300px;
     align-items: center;
-    gap: 80px;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 56px 40px;
+    gap: 56px;
+    padding: 48px 64px;
+    border-radius: 28px;
     text-align: left;
   }
 
-  .feature:nth-child(even) {
-    grid-template-columns: 320px 1fr;
+  .feature__copy {
+    margin-bottom: 0;
   }
 
-  .feature:nth-child(even) .feature__copy {
-    order: 2;
+  .features__arrow {
+    width: 48px;
+    height: 48px;
+    font-size: 30px;
   }
 
   .feature__title {
@@ -772,7 +881,7 @@ textarea {
   }
 
   .feature__screen {
-    width: 320px;
+    width: 300px;
     margin: 0;
   }
 
