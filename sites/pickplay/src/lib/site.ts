@@ -1,5 +1,5 @@
 // 도메인이 정해지면 SITE_URL만 바꾸면 된다.
-export const SITE_URL = "https://pickplay.pages.dev";
+export const SITE_URL = "https://pickplay-7vh.pages.dev";
 export const SITE_NAME = "PickPlay 픽플레이";
 export const SITE_TITLE = "PickPlay - 나를 알아가는 선택!";
 export const SITE_DESCRIPTION =
