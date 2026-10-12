@@ -1,4 +1,4 @@
-export const SITE_URL = "https://reconnect.pages.dev";
+export const SITE_URL = "https://reconnect-an9.pages.dev";
 export const SITE_NAME = "리커넥트";
 export const SITE_TITLE = "리커넥트 ReConnect - 부부 관계 회복을 위한 감정 케어";
 export const SITE_DESCRIPTION =

@@ -14,10 +14,13 @@
  https://passbook-6xc.pages.dev/
 7. www.badaya.io.kr (바다야)
  https://badaya.pages.dev/
+8. https://reconnect.waveon.me 리커넥트 (sites/reconnect, 이관 완료)
+ https://reconnect-an9.pages.dev/
+
 
 - 한번에 묶을 페이지(메인 페이지 필요)
 
-8. 바다야 진단페이지
+9. 바다야 진단페이지
 https://kwcc2020-99047.waveon.me/ 소상공인 사업운영 진단
 https://bdy2.waveon.me/ 창업성공 가능성 진단
 https://bdy.waveon.me/ 대표자 자질 테스트
