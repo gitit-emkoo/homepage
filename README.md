@@ -17,7 +17,8 @@ homepage/
 │   ├── wolse-landlord/ # 월세 스위치 임대인용 · 중개사 파트너 모집 (kwcc2020-100047.waveon.me)
 │   ├── coreset/        # www.coreset.im (디자인 새로 작업)
 │   ├── pickplay/       # pickplay.waveon.me (앱 소개 + 약관·개인정보·고객센터)
-│   └── diagnosis/      # 바다야 진단 4종 묶음 + 새 메인 (99047, bdy, bdy2, bdy3)
+│   ├── diagnosis/      # 바다야 진단 4종 묶음 + 새 메인 (99047, bdy, bdy2, bdy3)
+│   └── reconnect/      # 리커넥트 (reconnect.waveon.me, 디자인 새로 작업)
 ├── tools/
 │   ├── waveon-extract.mjs    # 예전 Waveon 페이지(블록형) → 디자인 데이터·이미지 추출
 │   ├── waveon-text.mjs       # 추출 데이터에서 긴 글(약관 등) 꺼내기
@@ -59,6 +60,6 @@ homepage/
 - 루트 폴더: (비움, 저장소 맨 위)
 - 빌드 명령어: `npm run build:<사이트 이름>`
 - 출력 폴더: `sites/<사이트 이름>/out`
-- 빌드 감시 경로(Cloudflare Build watch paths): `sites/<사이트 이름>/*`, `package.json`, `package-lock.json`
+- 빌드 감시 경로(Cloudflare Build watch paths): `sites/<사이트 이름>/*`, `package.json`, `package-lock.json`, `.node-version`
 
 `main` 브랜치에 push 하면 바뀐 사이트만 자동으로 다시 빌드·배포된다.
