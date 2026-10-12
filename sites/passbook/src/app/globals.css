@@ -137,7 +137,7 @@ a { color: inherit; }
 /* ==========================================================================
    Steps
    ========================================================================== */
-.steps { padding: 26px 0 25px; background: #fff; }
+.steps { --slide: calc(100cqw - 72px); container-type: inline-size; padding: 26px 0 28px; background: #fff; }
 .steps__guide-link {
   display: block;
   font-size: 16px;
@@ -146,12 +146,77 @@ a { color: inherit; }
   color: #ff008f;
   text-underline-offset: 3px;
 }
-.steps__list { margin-top: 16px; }
-.step { padding: 0 8px 0 30px; }
-.step + .step { margin-top: 36px; }
-.step__title { font-size: 16px; font-weight: 700; }
-.step__desc { margin-top: 3px; font-size: 16px; font-weight: 700; color: var(--blue); }
-.step__phone { width: 193px; margin: 36px auto 0; border-radius: 10px; }
+
+.steps__track {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 6px calc((100cqw - var(--slide)) / 2) 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.steps__track::-webkit-scrollbar { display: none; }
+.steps__track:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 var(--slide);
+  padding: 22px 16px 26px;
+  border-radius: 20px;
+  background: #f2f6fb;
+  text-align: center;
+  scroll-snap-align: center;
+  opacity: .5;
+  transform: scale(.94);
+  transition: opacity .3s ease, transform .3s ease;
+}
+.step.is-active { opacity: 1; transform: none; }
+.step__badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: #fff;
+}
+.step__title { margin-top: 12px; font-size: 17px; font-weight: 700; }
+.step__desc { margin: 4px 0 20px; font-size: 15px; font-weight: 700; color: var(--blue); text-wrap: balance; }
+.step__phone { width: 200px; margin-top: auto; }
+
+.steps__controls { display: flex; align-items: center; justify-content: center; gap: 18px; }
+.steps__arrow {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding-bottom: 3px;
+  border: 1px solid #dde6f2;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--blue);
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.steps__arrow:disabled { opacity: .35; cursor: default; }
+.steps__dots { display: flex; gap: 8px; }
+.steps__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #c9d8ec;
+  cursor: pointer;
+  transition: width .25s ease, background .25s ease;
+}
+.steps__dot.is-active { width: 24px; background: var(--blue); }
 
 /* ==========================================================================
    Points
@@ -484,14 +549,13 @@ a { color: inherit; }
   .trust__photo { aspect-ratio: 16 / 9; }
   .trust__text { font-size: 24px; }
 
-  .steps { padding: 48px 0; }
+  .steps { --slide: 360px; padding: 48px 0 44px; }
   .steps__guide-link { font-size: 18px; }
-  .steps__list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 56px 24px; margin-top: 40px; }
-  .step { padding: 0; text-align: center; }
-  .step + .step { margin-top: 0; }
-  .step:last-child:nth-child(odd) { grid-column: 1 / -1; }
-  .step__title, .step__desc { font-size: 17px; text-wrap: balance; }
-  .step__phone { width: 220px; margin-top: 24px; }
+  .steps__track { gap: 20px; margin-top: 32px; padding-bottom: 28px; }
+  .step { padding: 28px 24px 32px; }
+  .step__title { font-size: 18px; }
+  .step__desc { font-size: 16px; }
+  .step__phone { width: 220px; }
 
   .points { padding: 56px 0; }
   .points__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 0; }
@@ -575,10 +639,9 @@ a { color: inherit; }
   .trust__text { margin-top: 0; font-size: 28px; }
   .trust__btn { margin: 36px 0 0; }
 
-  .steps { padding: 72px 0; }
-  .steps__list { grid-template-columns: repeat(6, 1fr); gap: 64px 24px; }
-  .step, .step:last-child:nth-child(odd) { grid-column: span 2; }
-  .step:nth-child(4) { grid-column: 2 / span 2; }
+  .steps { padding: 72px 0 64px; }
+  .steps__track { gap: 24px; margin-top: 40px; }
+  .steps__arrow { width: 48px; height: 48px; font-size: 30px; }
 
   .point__text { font-size: 19px; }
 

@@ -1,4 +1,5 @@
-export const SITE_URL = "https://www.passbook.today";
+// www.passbook.today 도메인을 Cloudflare에 연결하면 이 값도 함께 바꾼다.
+export const SITE_URL = "https://passbook-6xc.pages.dev";
 export const SITE_NAME = "PassBook";
 export const SITE_DESCRIPTION = "고객 예약관리의 첫걸음은 패스북부터";
 
