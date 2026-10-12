@@ -6,7 +6,7 @@
  https://wolse-landlord.pages.dev/
 3. https://kwcc2020-100001.waveon.me/ 월세스위치 (임차인용)
  https://wolse-tenant.pages.dev/
-4. www.coreset.im 코어셋
+4. www.coreset.im 코어셋 (도메인 연결 완료)
  https://coreset.pages.dev/
 5. https://pickplay.waveon.me 픽플레이
  https://pickplay-7vh.pages.dev/

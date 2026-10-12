@@ -1,5 +1,4 @@
-// www.coreset.im 도메인을 Cloudflare에 연결하면 이 값도 함께 바꾼다.
-export const SITE_URL = "https://coreset.pages.dev";
+export const SITE_URL = "https://www.coreset.im";
 export const SITE_NAME = "코어셋 CoreSet";
 export const SITE_TITLE = "코어셋 CoreSet - 앱개발 | 웹개발 | MVP | 기획";
 export const SITE_DESCRIPTION =
