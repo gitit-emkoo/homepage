@@ -1016,3 +1016,23 @@ h2 em,
   color: #fff;
   background: #3182f6;
 }
+.store-btn.is-soon,
+.store-btn.is-soon:hover {
+  position: relative;
+  transform: none;
+  background: #9dbcee;
+  cursor: default;
+}
+.store-soon {
+  position: absolute;
+  top: -9px;
+  right: -6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #ff6b4a;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fff;
+}

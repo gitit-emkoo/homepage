@@ -30,7 +30,7 @@ public/images/
 ## 남은 일
 
 - `src/lib/site.ts` 의 `SITE_URL` 을 실제 도메인으로 교체
-- 앱 출시 후 `PLAY_STORE_URL`, `APP_STORE_URL` 을 실제 앱 주소로 교체 (원본도 스토어 메인 주소만 걸려 있음)
+- 앱 출시 후 `PLAY_STORE_URL`, `APP_STORE_URL` 에 실제 앱 주소를 넣는다. 비어 있는 동안은 스토어 버튼이 링크 없이 '출시 예정'으로 보인다.
 
 ## 배포 (Cloudflare Pages / Netlify / Vercel 공통)
 

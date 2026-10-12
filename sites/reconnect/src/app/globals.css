@@ -296,6 +296,28 @@ em {
   width: 132px;
 }
 
+.stores__badge.is-soon {
+  position: relative;
+}
+
+.stores__badge.is-soon img {
+  opacity: 0.45;
+}
+
+.stores__soon {
+  position: absolute;
+  top: -8px;
+  right: -6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--rose);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fff;
+}
+
 a.stores__badge {
   transition: transform 0.2s ease;
 }

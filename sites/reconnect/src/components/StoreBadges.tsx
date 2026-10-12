@@ -17,8 +17,9 @@ export default function StoreBadges() {
             {image}
           </a>
         ) : (
-          <span key={badge.key} className="stores__badge">
+          <span key={badge.key} className="stores__badge is-soon">
             {image}
+            <em className="stores__soon">출시 예정</em>
           </span>
         );
       })}

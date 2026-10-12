@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { APP_RELEASED } from "@/lib/site";
 import StoreButtons from "./StoreButtons";
 
 const HeroSection = () => (
@@ -19,7 +20,7 @@ const HeroSection = () => (
           직접 쉽게 할 수 있어요
         </p>
         <StoreButtons />
-        <p className="small-note">앱을 설치하고 무료로 시작하세요</p>
+        <p className="small-note">{APP_RELEASED ? "앱을 설치하고 무료로 시작하세요" : "앱 출시를 준비하고 있어요"}</p>
         <div className="hero-media">
           <Image
             src="/images/hero-app.png"

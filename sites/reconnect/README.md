@@ -33,7 +33,7 @@ public/images/              # 히어로 사진, 앱 화면 캡처, 로고, 배�
 ## 참고
 
 - "EmoMap 감정 진단" 버튼은 원본처럼 `reconnect-ivory.vercel.app/diagnosis` 로 이동한다.
-- 원본의 스토어 배지에는 링크가 없었다. `lib/site.ts` 의 `STORE_LINKS` 에 주소를 넣으면 배지가 링크가 된다.
+- 원본의 스토어 배지에는 링크가 없었다. `lib/site.ts` 의 `STORE_LINKS` 에 주소를 넣으면 배지가 링크가 된다. 비어 있는 동안은 흐린 배지에 '출시 예정' 표시가 붙는다.
 - 원본에서 이미지 한 장이던 사전 테스터 결과는 HTML 로 다시 만들었다.
 
 ## 배포 (Cloudflare Pages)

@@ -6,7 +6,7 @@ export const SITE_DESCRIPTION =
 
 export const DIAGNOSIS_URL = "https://reconnect-ivory.vercel.app/diagnosis";
 
-// 스토어 주소가 정해지면 넣는다. 비어 있으면 배지만 보이고 링크는 걸리지 않는다.
+// 앱 출시 후 스토어 주소를 넣는다. 비어 있으면 배지가 '출시 예정'으로 보인다.
 export const STORE_LINKS = {
   google: "",
   apple: "",
