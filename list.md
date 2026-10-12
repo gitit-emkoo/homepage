@@ -12,7 +12,7 @@
  https://pickplay-7vh.pages.dev/
 6. www.passbook.today 패스북 (sites/passbook, 이관 완료)
  https://passbook-6xc.pages.dev/
-7. www.badaya.io.kr (바다야)
+7. www.badaya.io.kr (바다야, 도메인 연결 완료)
  https://badaya.pages.dev/
 8. https://reconnect.waveon.me 리커넥트 (sites/reconnect, 이관 완료)
  https://reconnect-an9.pages.dev/
