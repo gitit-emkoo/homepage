@@ -1,4 +1,5 @@
-export const SITE_URL = "https://www.badaya.io.kr";
+// www.badaya.io.kr 도메인을 Cloudflare에 연결하면 이 값도 함께 바꾼다.
+export const SITE_URL = "https://badaya.pages.dev";
 export const SITE_TITLE = "바다야 | 정부지원금을 쉽고 빠르게 받아보세요";
 export const SITE_DESCRIPTION =
   "내 조건에 딱 맞는 정부지원금, 정부지원 혜택, 소상공인 지원금 공고를 바로 확인하고 신청까지 한번에! 이제 바다야에서 수시로 확인하고 바로바로 신청해 보세요!";

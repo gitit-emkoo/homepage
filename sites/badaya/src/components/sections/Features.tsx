@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import type { CSSProperties } from "react";
+import { useRef, useState, type CSSProperties } from "react";
 
 type PhoneSize = "default" | "wide" | "large" | "short";
 
@@ -111,14 +113,48 @@ function PhoneVisual({ phone, extra }: Pick<Feature, "phone" | "extra">) {
 }
 
 export default function Features() {
+  const trackRef = useRef<HTMLOListElement>(null);
+  const [active, setActive] = useState(0);
+
+  const slides = () => Array.from(trackRef.current?.children ?? []) as HTMLElement[];
+
+  const handleScroll = () => {
+    const track = trackRef.current;
+    if (!track) return;
+    const center = track.scrollLeft + track.clientWidth / 2;
+    let nearest = 0;
+    let best = Infinity;
+    slides().forEach((slide, i) => {
+      const distance = Math.abs(slide.offsetLeft + slide.offsetWidth / 2 - center);
+      if (distance < best) {
+        best = distance;
+        nearest = i;
+      }
+    });
+    setActive(nearest);
+  };
+
+  const goTo = (index: number) => {
+    const track = trackRef.current;
+    const slide = slides()[index];
+    if (!track || !slide) return;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    track.scrollTo({
+      left: slide.offsetLeft - (track.clientWidth - slide.offsetWidth) / 2,
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
+  };
+
   return (
-    <>
-      {FEATURES.map((feature) => (
-        <section
-          key={feature.title}
-          className={`feature feature--${feature.tone}${feature.tone === "light" ? " feature--reverse" : ""}`}
-        >
-          <div className="container feature__grid">
+    <section className="features" aria-roledescription="carousel" aria-label="바다야 주요 기능">
+      <ol className="features__track" ref={trackRef} onScroll={handleScroll} tabIndex={0}>
+        {FEATURES.map((feature, index) => (
+          <li
+            key={feature.title}
+            className={`feature feature--${feature.tone}${index === active ? " is-active" : ""}`}
+            aria-roledescription="slide"
+            aria-label={`${index + 1} / ${FEATURES.length}`}
+          >
             <div className="feature__text">
               <h3 className="feature__title">{feature.title}</h3>
               <p className={`feature__desc${feature.descBlack ? " feature__desc--black" : ""}`}>
@@ -130,9 +166,42 @@ export default function Features() {
             <div className="feature__visual">
               <PhoneVisual phone={feature.phone} extra={feature.extra} />
             </div>
-          </div>
-        </section>
-      ))}
-    </>
+          </li>
+        ))}
+      </ol>
+
+      <div className="features__controls">
+        <button
+          type="button"
+          className="features__arrow"
+          onClick={() => goTo(active - 1)}
+          disabled={active === 0}
+          aria-label="이전 기능"
+        >
+          ‹
+        </button>
+        <div className="features__dots">
+          {FEATURES.map((feature, index) => (
+            <button
+              key={feature.title}
+              type="button"
+              className={`features__dot${index === active ? " is-active" : ""}`}
+              onClick={() => goTo(index)}
+              aria-label={`${index + 1}번째 기능: ${feature.title}`}
+              aria-current={index === active}
+            />
+          ))}
+        </div>
+        <button
+          type="button"
+          className="features__arrow"
+          onClick={() => goTo(active + 1)}
+          disabled={active === FEATURES.length - 1}
+          aria-label="다음 기능"
+        >
+          ›
+        </button>
+      </div>
+    </section>
   );
 }
