@@ -1,18 +1,23 @@
 export const SITE_URL = "https://www.coreset.im";
 export const SITE_NAME = "코어셋 CoreSet";
-export const SITE_TITLE = "코어셋 CoreSet - 앱개발 | 웹개발 | MVP | 기획";
+export const SITE_TITLE = "코어셋 CoreSet - 앱·웹 제작 | 마케팅 | AI 크리에이티브";
 export const SITE_DESCRIPTION =
-  "사업화 가능한 기획 & MVP 앱 개발. 투자사 출신 기획 담당자가 검증에 꼭 필요한 범위만 설계하고, 기획·디자인·개발 ONE 팀이 함께합니다.";
+  "기획·제작부터 마케팅·AI 크리에이티브까지. MVP 앱·웹 개발, 이미지·영상·온라인 광고 대행, AI 영상·이미지 제작을 한 팀에서 진행합니다.";
 
 export const GA_MEASUREMENT_ID = "G-NR4WSZJD44";
 
 export const WEB3FORMS_ACCESS_KEY = "f1e190f1-deb2-471d-8a5e-479412892ffc";
 export const FORM_SUBJECT = "[코어셋] 상담 문의";
 
+export const INSTAGRAM_HANDLE = "coreset.im";
+export const INSTAGRAM_URL = "https://www.instagram.com/coreset.im/";
+/** SnapWidget/LightWidget 등 무료 위젯 embed URL. 연동 후 실제 URL로 교체한다. */
+export const INSTAGRAM_EMBED_URL = "";
+
 export const NAV_LINKS = [
-  { href: "/process", label: "서비스 · 절차" },
-  { href: "/portfolio", label: "포트폴리오" },
-  { href: "/contact", label: "상담 문의" },
+  { href: "/#services", label: "서비스" },
+  { href: "/#process", label: "절차" },
+  { href: "/#portfolio", label: "포트폴리오" },
 ] as const;
 
 export const COMPANY = {

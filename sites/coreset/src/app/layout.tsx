@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import ContactFab from "@/components/ContactFab";
+import ContactModal from "@/components/ContactModal";
+import { ContactProvider } from "@/components/ContactProvider";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { GA_MEASUREMENT_ID, SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from "@/lib/site";
@@ -34,16 +37,20 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#f5f4ef",
+  themeColor: "#f4f6f5",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ko">
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <ContactProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <ContactFab />
+          <ContactModal />
+        </ContactProvider>
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
         <Script id="google-analytics">
           {`window.dataLayer = window.dataLayer || [];
