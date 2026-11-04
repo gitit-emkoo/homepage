@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const PHASES = [
   {
@@ -53,12 +53,70 @@ const PHASES = [
   },
 ];
 
+function wavePath(t: number) {
+  const y0 = 36 + Math.sin(t * 0.85) * 8;
+  const c1y = 28 + Math.sin(t * 0.85 + 0.6) * 12;
+  const c2y = 170 + Math.sin(t * 0.85 + 1.4) * 16;
+  const midY = 128 + Math.sin(t * 0.85 + 2.2) * 14;
+  const c3y = 48 + Math.sin(t * 0.85 + 3.1) * 12;
+  const endY = 96 + Math.sin(t * 0.85 + 3.9) * 10;
+  return `M28 ${y0.toFixed(2)} C120 ${c1y.toFixed(2)} 150 ${c2y.toFixed(2)} 260 ${midY.toFixed(2)} S430 ${c3y.toFixed(2)} 532 ${endY.toFixed(2)}`;
+}
+
 export default function ProcessTabs() {
   const [active, setActive] = useState(0);
+  const [drawn, setDrawn] = useState(false);
+  const pathRef = useRef<SVGPathElement>(null);
+  const pulseRef = useRef<SVGPathElement>(null);
   const phase = PHASES[active];
+  const progress = PHASES.length <= 1 ? 0 : active / (PHASES.length - 1);
+
+  useEffect(() => {
+    setDrawn(false);
+    const id = window.requestAnimationFrame(() => setDrawn(true));
+    return () => window.cancelAnimationFrame(id);
+  }, [active]);
+
+  useEffect(() => {
+    const path = pathRef.current;
+    const pulse = pulseRef.current;
+    if (!path || !pulse) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const still = wavePath(0);
+      path.setAttribute("d", still);
+      pulse.setAttribute("d", still);
+      return;
+    }
+
+    let raf = 0;
+    const start = performance.now();
+
+    const tick = (now: number) => {
+      const t = (now - start) / 1000;
+      const d = wavePath(t);
+      path.setAttribute("d", d);
+      pulse.setAttribute("d", d);
+      raf = window.requestAnimationFrame(tick);
+    };
+
+    raf = window.requestAnimationFrame(tick);
+    return () => window.cancelAnimationFrame(raf);
+  }, []);
 
   return (
     <div className="process-tabs">
+      <div className="process-tabs__rail" aria-hidden="true">
+        <div className="process-tabs__rail-track">
+          <span className="process-tabs__rail-fill" style={{ width: `${progress * 100}%` }} />
+        </div>
+        <div className="process-tabs__rail-dots">
+          {PHASES.map((item, i) => (
+            <i key={item.id} className={i <= active ? "is-on" : undefined} />
+          ))}
+        </div>
+      </div>
+
       <div className="process-tabs__nav" role="tablist" aria-label="진행 절차">
         {PHASES.map((item, i) => (
           <button
@@ -74,11 +132,27 @@ export default function ProcessTabs() {
           </button>
         ))}
       </div>
+
       <div className="process-tabs__panel" role="tabpanel">
+        <svg className="process-tabs__stroke" viewBox="0 0 560 220" aria-hidden="true">
+          <path
+            ref={pathRef}
+            className={`process-tabs__stroke-path${drawn ? " is-drawn" : ""}`}
+            d={wavePath(0)}
+            fill="none"
+            pathLength={1}
+          />
+          <path
+            ref={pulseRef}
+            className={`process-tabs__stroke-pulse${drawn ? " is-drawn" : ""}`}
+            d={wavePath(0)}
+            fill="none"
+            pathLength={1}
+          />
+        </svg>
+
         <div className="process-tabs__copy">
-          <p className="process-tabs__step">
-            Step {String(active + 1).padStart(2, "0")}
-          </p>
+          <p className="process-tabs__step">Step {String(active + 1).padStart(2, "0")}</p>
           <h3>{phase.heading}</h3>
           <p>{phase.body}</p>
           <ul>
@@ -87,6 +161,7 @@ export default function ProcessTabs() {
             ))}
           </ul>
         </div>
+
         <div className="process-tabs__visual" aria-hidden="true">
           <div className="process-tabs__card process-tabs__card--main">
             <p>진행 체크</p>

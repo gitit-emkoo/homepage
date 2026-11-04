@@ -10,6 +10,7 @@ type Props = {
 export default function CtaBand({ title, body, action = "문의하기" }: Props) {
   return (
     <section className="cta">
+      <div className="cta__sun" aria-hidden="true" />
       <div className="cta__rays" aria-hidden="true" />
       <div className="wrap cta__inner">
         <h2 className="cta__title">{title}</h2>

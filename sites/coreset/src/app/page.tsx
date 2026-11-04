@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ClicheMarquee from "@/components/ClicheMarquee";
 import ContactButton from "@/components/ContactButton";
 import CtaBand from "@/components/CtaBand";
+import HeroAmbient from "@/components/HeroAmbient";
 import HeroStage from "@/components/HeroStage";
 import InstagramFeed from "@/components/InstagramFeed";
 import ProcessTabs from "@/components/ProcessTabs";
+import RevealTitle from "@/components/RevealTitle";
 import ServicesBento from "@/components/ServicesBento";
 import { INSTAGRAM_HANDLE } from "@/lib/site";
 
@@ -50,24 +53,11 @@ const POINTS = [
 const MAIN_TEAM = ["총괄 / 기획", "디자인", "개발 (P)", "개발 (B)"];
 const SUB_TEAM = ["법인 설립", "예비 특허"];
 
-const SERVICE_KINDS = [
-  { name: "MVP 앱", items: ["Android", "iOS"] },
-  { name: "MVP 웹", items: ["웹 서비스", "관리자 페이지", "이벤트 페이지"] },
-  { name: "소개형 홈페이지", items: ["랜딩 웹/앱", "쇼핑몰", "커뮤니티", "관리자 기능"] },
-  { name: "업무용 앱/웹", items: ["맞춤형 업무 툴", "협업/관리 기능", "효율적인 워크플로우"] },
-];
-
 const PREP = [
   "구현하고자 하는 서비스 한 줄 정의",
   "꼭 필요한 기능 및 주요 동작",
   "참고하고 싶은 앱이나 웹사이트",
   "디자인 컨셉 (참고 앱이나 웹)",
-];
-
-const PROMISES = [
-  { title: "투명한 계약", sub: "불안하지 않게" },
-  { title: "빠른 응답", sub: "답답하지 않게" },
-  { title: "진행 현황 공유", sub: "궁금하지 않게" },
 ];
 
 const FAQ = [
@@ -97,10 +87,7 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <div className="hero__bg" aria-hidden="true">
-          <div className="hero__grid" />
-          <div className="hero__glow" />
-        </div>
+        <HeroAmbient />
         <div className="wrap hero__inner">
           <div className="hero__copy">
             <p className="hero__brand">코어셋 CoreSet</p>
@@ -139,40 +126,31 @@ export default function Home() {
         <div className="wrap">
           <div className="section__head section__head--center">
             <p className="label">서비스</p>
-            <h2 className="h2">
-              세 가지로, 처음부터
-              <br />
-              다음 단계까지 함께합니다
-            </h2>
+            <RevealTitle
+              className="h2"
+              lines={["세 가지로, 처음부터", "다음 단계까지 함께합니다"]}
+            />
           </div>
           <ServicesBento />
         </div>
       </section>
 
-      <section className="cliche">
-        <div className="wrap">
-          <p className="cliche__ask">이런 문구들, 이미 너무 많이 보셨죠?</p>
-          <ul className="cliche__list">
-            {CLICHES.map((line) => (
-              <li key={line}>
-                <s>{line}</s>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <ClicheMarquee ask="이런 문구들, 이미 너무 많이 보셨죠?" lines={CLICHES} />
 
       <section className="section why">
         <div className="wrap split">
           <div className="split__head">
             <p className="label">왜 MVP는 달라야 하나</p>
-            <h2 className="h2">
-              MVP는 내 아이디어를
-              <br />
-              <span className="text-accent">자본으로 바꾸는 과정</span>이기
-              <br />
-              때문입니다.
-            </h2>
+            <RevealTitle
+              className="h2"
+              lines={[
+                "MVP는 내 아이디어를",
+                <>
+                  <span className="text-accent">자본으로 바꾸는 과정</span>이기
+                </>,
+                "때문입니다.",
+              ]}
+            />
           </div>
           <ol className="why__list">
             <li>
@@ -206,11 +184,10 @@ export default function Home() {
 
       <section className="section worries">
         <div className="wrap">
-          <h2 className="h2 worries__title">
-            초기에 이런 고민과 걱정,
-            <br />
-            너무 잘 알고 공감하고 있습니다.
-          </h2>
+          <RevealTitle
+            className="h2 worries__title"
+            lines={["초기에 이런 고민과 걱정,", "너무 잘 알고 공감하고 있습니다."]}
+          />
           <ul className="worries__list">
             {WORRIES.map((w) => (
               <li key={w.mark}>
@@ -229,7 +206,7 @@ export default function Home() {
         <div className="wrap">
           <div className="section__head">
             <p className="label">코어셋이 일하는 방식</p>
-            <h2 className="h2">이런 고민과 걱정을 이렇게 해결합니다</h2>
+            <RevealTitle className="h2" lines={["이런 고민과 걱정을 이렇게 해결합니다"]} />
           </div>
           <ol className="points__list">
             {POINTS.map((point, i) => (
@@ -247,13 +224,16 @@ export default function Home() {
         <div className="wrap split">
           <div className="split__head">
             <p className="label">ONE 팀 배정</p>
-            <h2 className="h2">
-              아이디어가 <span className="text-accent">빠르게 시장에</span> 출시되고
-              <br />
-              정확히 검증되도록
-              <br />
-              ONE 팀을 배정합니다.
-            </h2>
+            <RevealTitle
+              className="h2"
+              lines={[
+                <>
+                  아이디어가 <span className="text-accent">빠르게 시장에</span> 출시되고
+                </>,
+                "정확히 검증되도록",
+                "ONE 팀을 배정합니다.",
+              ]}
+            />
           </div>
           <div className="team__chart">
             <div className="team__group">
@@ -281,36 +261,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--tight" id="process">
-        <div className="wrap">
-          <div className="section__head section__head--center">
-            <p className="label">서비스 · 절차</p>
-            <h2 className="h2">
-              절반이 넘는 고객사가
-              <br />
-              코어셋을 다시 찾고 있습니다.
-            </h2>
-          </div>
-          <ul className="services">
-            {SERVICE_KINDS.map((service) => (
-              <li key={service.name}>
-                <h3>{service.name}</h3>
-                <p>{service.items.join(" · ")}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="section steps-section">
+      <section className="section steps-section" id="process">
         <div className="wrap">
           <div className="section__head section__head--center">
             <p className="label">진행 절차</p>
-            <h2 className="h2">
-              명확한 절차로
-              <br />
-              <span className="text-accent">차근차근</span> 진행합니다
-            </h2>
+            <RevealTitle
+              className="h2"
+              lines={[
+                "명확한 절차로",
+                <>
+                  <span className="text-accent">차근차근</span> 진행합니다
+                </>,
+              ]}
+            />
           </div>
           <ProcessTabs />
         </div>
@@ -320,13 +283,16 @@ export default function Home() {
         <div className="wrap split">
           <div className="split__head">
             <p className="label">문의 전 준비</p>
-            <h2 className="h2">
-              아래 내용을 남겨 주시면
-              <br />
-              <span className="text-accent">더 빠르고 정확한 소통</span>을
-              <br />
-              시작할 수 있습니다.
-            </h2>
+            <RevealTitle
+              className="h2"
+              lines={[
+                "아래 내용을 남겨 주시면",
+                <>
+                  <span className="text-accent">더 빠르고 정확한 소통</span>을
+                </>,
+                "시작할 수 있습니다.",
+              ]}
+            />
           </div>
           <ol className="prep__list">
             {PREP.map((item) => (
@@ -336,32 +302,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section promises">
-        <div className="wrap">
-          <div className="section__head">
-            <p className="label">계약서에 넣는 3가지</p>
-            <h2 className="h2">
-              코어셋은 3가지 추가 사항을
-              <br />
-              계약서에 넣어 확실하게 보장합니다.
-            </h2>
-          </div>
-          <ul className="promises__list">
-            {PROMISES.map((p) => (
-              <li key={p.title}>
-                <span>{p.sub}</span>
-                <strong>{p.title}</strong>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       <section className="section faq">
         <div className="wrap split">
           <div className="split__head">
             <p className="label">FAQ</p>
-            <h2 className="h2">자주 하는 질문</h2>
+            <RevealTitle className="h2" lines={["자주 하는 질문"]} />
           </div>
           <div className="faq__list">
             {FAQ.map((item) => (
@@ -379,11 +324,10 @@ export default function Home() {
           <div className="section__head section__head--row">
             <div>
               <p className="label">포트폴리오</p>
-              <h2 className="h2">
-                Instagram @{INSTAGRAM_HANDLE}
-                <br />
-                에서 작업물을 만나보세요
-              </h2>
+              <RevealTitle
+                className="h2"
+                lines={[`Instagram @${INSTAGRAM_HANDLE}`, "에서 작업물을 만나보세요"]}
+              />
             </div>
             <Link href={`https://www.instagram.com/${INSTAGRAM_HANDLE}/`} className="link-arrow" target="_blank" rel="noopener noreferrer">
               인스타그램 바로가기 <span aria-hidden="true">→</span>

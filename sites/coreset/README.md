@@ -45,9 +45,7 @@ src/
 
 ## Instagram 피드 연결
 
-1. [SnapWidget](https://snapwidget.com/) 또는 [LightWidget](https://lightwidget.com/)에서 `@coreset.im` 무료 위젯을 만든다.
-2. 나온 iframe `src` URL을 `src/lib/site.ts` 의 `INSTAGRAM_EMBED_URL` 에 넣는다.
-3. 비워 두면 플레이스홀더와 인스타 프로필 링크만 보인다.
+SnapWidget embed가 `src/lib/site.ts` 의 `INSTAGRAM_EMBED_URL` 에 연결되어 있다. 위젯을 바꾸려면 SnapWidget iframe `src` 만 교체하면 된다.
 
 ## 상담 문의 폼
 

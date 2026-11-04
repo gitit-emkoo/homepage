@@ -11,8 +11,7 @@ export const FORM_SUBJECT = "[코어셋] 상담 문의";
 
 export const INSTAGRAM_HANDLE = "coreset.im";
 export const INSTAGRAM_URL = "https://www.instagram.com/coreset.im/";
-/** SnapWidget/LightWidget 등 무료 위젯 embed URL. 연동 후 실제 URL로 교체한다. */
-export const INSTAGRAM_EMBED_URL = "";
+export const INSTAGRAM_EMBED_URL = "https://snapwidget.com/embed/c46df114-73d6-480b-86e6-18e0a288d6e9";
 
 export const NAV_LINKS = [
   { href: "/#services", label: "서비스" },

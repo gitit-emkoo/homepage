@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import ContactFab from "@/components/ContactFab";
 import ContactModal from "@/components/ContactModal";
 import { ContactProvider } from "@/components/ContactProvider";
 import Footer from "@/components/Footer";
@@ -48,7 +47,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Header />
           <main>{children}</main>
           <Footer />
-          <ContactFab />
           <ContactModal />
         </ContactProvider>
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
