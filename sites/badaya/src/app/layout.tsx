@@ -15,11 +15,20 @@ export const metadata: Metadata = {
     siteName: SITE_TITLE,
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: "/images/og-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: SITE_TITLE,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
+    images: ["/images/og-hero.jpg"],
   },
   verification: {
     google: ["W4FiOYvAcRFDm_iF6YPLZA619CLEC2bo4fS3cSXbgbs", "JVp9nMeSw1Mo4sDcQULYYyf51js63UqaW5UJEKXzWI8"],
