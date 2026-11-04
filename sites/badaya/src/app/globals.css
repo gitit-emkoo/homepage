@@ -626,30 +626,43 @@ a { color: inherit; }
 @media (min-width: 1024px) {
   .container { max-width: 1120px; padding: 0 40px; }
 
-  /* Hero: 왼쪽 문구 · 오른쪽 하단 루프 영상(화면 약 1/4) */
-  .hero { padding: 96px 0 100px; }
+  /* Hero: 왼쪽 문구 · 오른쪽 하단 루프 영상
+     이전 25vw/420px 대비 가로 약 2배(면적 약 4배). 가로 4배는 화면 전체가 되어 우측 하단 배치가 불가. */
+  .hero {
+    position: relative;
+    padding: 96px 0 100px;
+    min-height: clamp(520px, 56vw, 700px);
+  }
   .hero__grid {
-    grid-template-columns: minmax(0, 1.4fr) min(25vw, 420px);
+    grid-template-columns: minmax(280px, 460px) 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
-      "title  visual"
-      "stats  visual"
-      "cta    visual";
+      "title  ."
+      "stats  ."
+      "cta    .";
     column-gap: 48px;
     row-gap: 0;
     align-items: start;
     justify-items: start;
     text-align: left;
-    min-height: 440px;
+    min-height: clamp(420px, 46vw, 580px);
+  }
+  .hero__title,
+  .hero__stats,
+  .hero__cta {
+    position: relative;
+    z-index: 2;
   }
   .hero__title { font-size: 44px; line-height: 1.35; }
   .hero__visual {
-    width: 100%;
+    position: absolute;
+    right: max(24px, calc((100vw - 1120px) / 2 + 24px));
+    bottom: 96px;
+    width: min(55vw, 880px);
     max-width: none;
     margin-top: 0;
-    justify-self: end;
-    align-self: end;
-    border-radius: 28px;
+    border-radius: 32px;
+    z-index: 1;
   }
   .hero__stats { margin-top: 36px; }
   .hero__stat--beta { font-size: 26px; }
