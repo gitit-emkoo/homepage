@@ -50,19 +50,21 @@ export default function Testimonials() {
         <ul className="testimonials__list">
           {TESTIMONIALS.map((item) => (
             <li key={`${item.name}-${item.business}`} className="testimonial">
-              <p className="testimonial__body">
-                {item.body.map((line, i) => (
-                  <Fragment key={i}>
-                    {i > 0 && <br />}
-                    {line}
-                  </Fragment>
-                ))}
-              </p>
-              <p className="testimonial__author">
-                {item.name}
-                <br />
-                {item.business}
-              </p>
+              <div className="testimonial__content">
+                <p className="testimonial__body">
+                  {item.body.map((line, i) => (
+                    <Fragment key={i}>
+                      {i > 0 && <br />}
+                      {line}
+                    </Fragment>
+                  ))}
+                </p>
+                <p className="testimonial__author">
+                  {item.name}
+                  <br />
+                  {item.business}
+                </p>
+              </div>
               <Image className="testimonial__avatar" alt="" {...item.avatar} />
             </li>
           ))}
