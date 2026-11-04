@@ -43,11 +43,11 @@ export default function FlowProcess() {
             type="button"
             role="tab"
             aria-selected={active === index}
+            aria-label={`Step ${String(index + 1).padStart(2, "0")} ${item.label}`}
             className={`flow-process__tab${active === index ? " is-active" : ""}`}
             onClick={() => setActive(index)}
           >
-            <strong>{String(index + 1).padStart(2, "0")}</strong>
-            <span>{item.label}</span>
+            Step {String(index + 1).padStart(2, "0")}
           </button>
         ))}
       </div>
