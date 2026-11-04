@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
+import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 
 const FLOW_STEPS = [
   { label: "바다야가 알아서 찾고", src: "/images/step-1-search.png", alt: "검색하는 바다야 캐릭터" },
@@ -12,21 +12,7 @@ const FLOW_STEPS = [
 
 export default function FlowProcess() {
   const [active, setActive] = useState(0);
-  const tabsRef = useRef<HTMLDivElement>(null);
   const dragRef = useRef<{ x: number; y: number; moved: boolean } | null>(null);
-
-  useEffect(() => {
-    const tabs = tabsRef.current;
-    if (!tabs) return;
-    const current = tabs.children[active] as HTMLElement | undefined;
-    if (!current) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    current.scrollIntoView({
-      behavior: reduce ? "auto" : "smooth",
-      inline: "center",
-      block: "nearest",
-    });
-  }, [active]);
 
   const select = (index: number) => {
     setActive(Math.max(0, Math.min(FLOW_STEPS.length - 1, index)));
@@ -59,7 +45,6 @@ export default function FlowProcess() {
     <div className="flow-process">
       <div
         className="flow-process__tabs"
-        ref={tabsRef}
         role="tablist"
         aria-label="바다야 이용 과정"
       >
