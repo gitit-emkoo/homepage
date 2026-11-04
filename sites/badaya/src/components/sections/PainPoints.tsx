@@ -38,8 +38,11 @@ export default function PainPoints() {
         <h3 className="pain__flow-title">대화하고 제출만 하세요</h3>
 
         <ol className="pain__flow">
-          {FLOW_STEPS.map((step) => (
+          {FLOW_STEPS.map((step, index) => (
             <li key={step.label} className="pain__flow-item">
+              <span className="pain__flow-num" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               <p className="pain__flow-label">{step.label}</p>
               <Image
                 className="pain__flow-image"

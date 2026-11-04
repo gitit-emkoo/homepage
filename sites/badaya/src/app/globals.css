@@ -207,24 +207,60 @@ a { color: inherit; }
   color: #000;
 }
 .pain__flow {
+  --flow-gap: 20px;
   display: grid;
-  gap: 36px;
-  width: 88.9%;
-  margin: 28px auto 0;
-  padding: 0;
+  grid-auto-flow: column;
+  grid-auto-columns: min(72vw, 260px);
+  gap: var(--flow-gap);
+  width: 100%;
+  margin: 28px 0 0;
+  padding: 8px max(5.55vw, 16px) 12px;
   list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
-.pain__flow-item { text-align: center; }
-.pain__flow-label {
-  margin-bottom: 16px;
-  font-family: var(--font-display);
-  font-size: 22px;
+.pain__flow::-webkit-scrollbar { display: none; }
+.pain__flow-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  scroll-snap-align: center;
+}
+.pain__flow-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: calc(50% + 28px);
+  width: calc(50% + var(--flow-gap) - 28px);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(60, 130, 245, 0.45), rgba(60, 130, 245, 0.15));
+  pointer-events: none;
+}
+.pain__flow-num {
+  display: block;
+  font-family: var(--font-spoqa);
+  font-size: 13px;
   font-weight: 700;
-  line-height: 1.4;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: var(--blue);
+}
+.pain__flow-label {
+  margin: 10px 0 14px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
   color: var(--blue-strong);
 }
 .pain__flow-image {
-  width: 100%;
+  width: 78%;
+  max-width: 200px;
   height: auto;
   margin: 0 auto;
   aspect-ratio: 920 / 1150;
@@ -774,8 +810,32 @@ a { color: inherit; }
   .pain__list { display: inline-block; padding-left: 0; font-size: 19px; }
   .pain__answer { font-size: 26px; }
   .pain__flow-title { margin-top: 56px; font-size: 28px; }
-  .pain__flow { width: 400px; gap: 48px; margin-top: 32px; }
-  .pain__flow-label { font-size: 26px; margin-bottom: 20px; }
+  .pain__flow {
+    --flow-gap: 28px;
+    grid-auto-flow: unset;
+    grid-auto-columns: unset;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 560px);
+    margin: 32px auto 0;
+    padding: 0;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+  .pain__flow-item { scroll-snap-align: unset; }
+  .pain__flow-item:not(:last-child)::after { display: none; }
+  .pain__flow-item:nth-child(odd):not(:last-child)::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: calc(50% + 36px);
+    width: calc(50% + var(--flow-gap) - 36px);
+    height: 1px;
+    background: linear-gradient(90deg, rgba(60, 130, 245, 0.45), rgba(60, 130, 245, 0.15));
+  }
+  .pain__flow-num { font-size: 14px; }
+  .pain__flow-label { margin: 12px 0 16px; font-size: 22px; }
+  .pain__flow-image { width: 70%; max-width: 220px; }
 
   .solution { padding: 64px 0; }
   .solution__text { font-size: 26px; }
@@ -929,8 +989,39 @@ a { color: inherit; }
   .pain__list li + li { margin-top: 18px; }
   .pain__answer { margin-top: 56px; font-size: 34px; line-height: 1.45; }
   .pain__flow-title { margin-top: 72px; font-size: 34px; line-height: 1.45; }
-  .pain__flow { width: 460px; gap: 64px; margin-top: 40px; }
-  .pain__flow-label { font-size: 32px; margin-bottom: 24px; }
+  .pain__flow {
+    --flow-gap: 20px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+    max-width: 1040px;
+    margin: 40px auto 0;
+    gap: var(--flow-gap);
+  }
+  .pain__flow-item:nth-child(odd):not(:last-child)::after { display: none; }
+  .pain__flow-item:not(:last-child)::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: calc(50% + 40px);
+    width: calc(50% + var(--flow-gap) - 28px);
+    height: 1px;
+    background: linear-gradient(90deg, rgba(60, 130, 245, 0.5), rgba(60, 130, 245, 0.12));
+  }
+  .pain__flow-item:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: 19px;
+    right: calc(var(--flow-gap) / -2 - 3px);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(60, 130, 245, 0.55);
+    z-index: 1;
+  }
+  .pain__flow-num { font-size: 15px; }
+  .pain__flow-label { margin: 14px 0 18px; font-size: 20px; line-height: 1.35; }
+  .pain__flow-image { width: 78%; max-width: 200px; }
 
   .solution { padding: 96px 0; }
   .solution__text { font-size: 34px; line-height: 1.5; }
