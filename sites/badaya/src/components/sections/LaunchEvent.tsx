@@ -5,14 +5,19 @@ export default function LaunchEvent() {
   return (
     <section className="event">
       <div className="event__inner">
+        <h2 className="event__title">
+          사업하며 당연히 받을 권리를
+          <br />
+          절대 포기하지 마세요
+        </h2>
         <Image
           className="event__image"
-          src="/images/event.jpg"
-          alt="출시 이벤트: 이벤트 기간 앱 다운 즉시 실전플랜 무료이용권 2회 지급"
-          width={1007}
-          height={534}
+          src="/images/event.png"
+          alt="혜택을 떠 먹여 주는 바다야"
+          width={819}
+          height={1024}
         />
-        <AppDownloadButton className="btn--event">내가 받을수있는 돈 확인하기</AppDownloadButton>
+        <AppDownloadButton className="btn--event">지원금 빠르게 찾아보기</AppDownloadButton>
       </div>
     </section>
   );

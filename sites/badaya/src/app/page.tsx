@@ -1,5 +1,5 @@
 import ScrollReveal from "@/components/ScrollReveal";
-import CmtTechnology from "@/components/sections/CmtTechnology";
+import BusinessAI from "@/components/sections/BusinessAI";
 import Compare from "@/components/sections/Compare";
 import Features from "@/components/sections/Features";
 import Footer from "@/components/sections/Footer";
@@ -7,7 +7,8 @@ import Hero from "@/components/sections/Hero";
 import LaunchEvent from "@/components/sections/LaunchEvent";
 import PainPoints from "@/components/sections/PainPoints";
 import Partners from "@/components/sections/Partners";
-import Plan from "@/components/sections/Plan";
+import Solution from "@/components/sections/Solution";
+import StoreReviews from "@/components/sections/StoreReviews";
 import Story from "@/components/sections/Story";
 import Testimonials from "@/components/sections/Testimonials";
 
@@ -17,12 +18,13 @@ export default function Home() {
       <main>
         <Hero />
         <PainPoints />
+        <Solution />
         <Features />
-        <CmtTechnology />
         <Story />
         <Compare />
-        <Plan />
+        <BusinessAI />
         <Testimonials />
+        <StoreReviews />
         <LaunchEvent />
         <Partners />
       </main>

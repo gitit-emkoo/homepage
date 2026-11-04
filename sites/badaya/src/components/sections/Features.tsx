@@ -7,6 +7,7 @@ type PhoneSize = "default" | "wide" | "large" | "short";
 
 type Feature = {
   tone: "blue" | "light";
+  step: string;
   title: string;
   desc: [string, string];
   descBlack?: boolean;
@@ -17,42 +18,48 @@ type Feature = {
 const FEATURES: Feature[] = [
   {
     tone: "blue",
-    title: "사업 조건에 딱 맞는 공고들만 눈앞에",
-    desc: ["번거롭게 찾고, 확인할 필요 없이 ", "조건에 맞춰 정확하게 선별해줘요"],
-    phone: { src: "/images/phone-1-match.png", alt: "바다야 추천 맞춤 공고 화면", size: "wide" },
+    step: "01",
+    title: "내 사업전용 바다야 탄생",
+    desc: ["바다야에게 대표님 사업을 알려주면", "지원금 전용 AI가 탄생해요"],
+    phone: { src: "/images/phone-1-match.png", alt: "바다야와 만나요 화면", size: "wide" },
   },
   {
     tone: "light",
-    title: "준비 서류는 확실하게",
-    desc: ["공고별로 다른 제출서류 헷갈리지 않게", "실제 필요한 서류만 딱 정리해 드려요"],
-    phone: { src: "/images/phone-2-documents.png", alt: "지원 서류 안내 화면", size: "default" },
+    step: "02",
+    title: "알아서 찾고 분석해요",
+    desc: ["조건에 딱 맞는 가능성 높은 공고만", "정확하게 찾고, 정리해요"],
+    phone: { src: "/images/phone-2-documents.png", alt: "공고 검색·분석 화면", size: "default" },
+  },
+  {
+    tone: "blue",
+    step: "03",
+    title: "작성해야 할 문서는 대화로 끝나요",
+    desc: ["작성에 필요한 질문도 알아서 하고", "대답을 분석하며 문서로 완성해요"],
+    descBlack: true,
+    phone: { src: "/images/phone-3-template.png", alt: "문서 작성 화면", size: "default" },
+  },
+  {
+    tone: "light",
+    step: "04",
+    title: "실전에 필요한 문서 그대로 준비해요",
+    desc: ["완성된 문서는 바로 제출할 수 있게", "실전 양식으로 준비해 드려요"],
+    phone: { src: "/images/phone-4-ai.png", alt: "실전 양식 문서 화면", size: "large" },
     extra: "doc-cards",
   },
   {
     tone: "blue",
-    title: "작성이 필요한 문서라면 실전 양식에 딱 맞춰",
-    desc: ["사업계획서 뿐 아니라 신청서 까지", "실제 요구하는 양식에 맞춰 준비할 수 있어요"],
-    descBlack: true,
-    phone: { src: "/images/phone-3-template.png", alt: "실전 양식 문서 작성 화면", size: "default" },
-  },
-  {
-    tone: "light",
-    title: "나만의 AI로 서류는 더 쉽고 편하게",
-    desc: ["내 사업을 더 잘 아는 나만의 AI가", "문서 초안을 공고 특성에 맞게 작성해 줘요"],
-    phone: { src: "/images/phone-4-ai.png", alt: "AI 문서 초안 작성 화면", size: "large" },
-  },
-  {
-    tone: "blue",
-    title: "원하는 방법으로 신청까지 한번에",
-    desc: ["가벼운 공고는 앱에서 끝내고", "내보내 PC에서 마무리할 수도 있어요"],
-    phone: { src: "/images/phone-5-apply.png", alt: "신청 방법 선택 화면", size: "large" },
+    step: "05",
+    title: "신청 방법도 더 쉽게 안내해요",
+    desc: ["챙겨야 할 서류도, 제출 방법도", "한 번 더 안내해요"],
+    phone: { src: "/images/phone-5-apply.png", alt: "신청 안내 화면", size: "large" },
     extra: "apply-buttons",
   },
   {
     tone: "light",
-    title: "몰라서 못 받는일 절대없도록",
-    desc: ["놓치기 쉬운 혜택과 마감일\u00a0", "시작부터 끝까지 바다야 가 챙겨드려요"],
-    phone: { src: "/images/phone-6-deadline.png", alt: "마감일 알림 화면", size: "short" },
+    step: "06",
+    title: "나만의 바다야 학습시키기",
+    desc: ["평소 언제든 편할때 간단히 답 해놓으면", "신청할 때 더 편해져요"],
+    phone: { src: "/images/phone-6-deadline.png", alt: "나만의 AI 학습 화면", size: "short" },
   },
 ];
 
@@ -146,16 +153,17 @@ export default function Features() {
   };
 
   return (
-    <section className="features" aria-roledescription="carousel" aria-label="바다야 주요 기능">
+    <section className="features" aria-roledescription="carousel" aria-label="바다야 사용 플로우">
       <ol className="features__track" ref={trackRef} onScroll={handleScroll} tabIndex={0}>
         {FEATURES.map((feature, index) => (
           <li
-            key={feature.title}
+            key={feature.step}
             className={`feature feature--${feature.tone}${index === active ? " is-active" : ""}`}
             aria-roledescription="slide"
             aria-label={`${index + 1} / ${FEATURES.length}`}
           >
             <div className="feature__text">
+              <p className="feature__step">{feature.step}</p>
               <h3 className="feature__title">{feature.title}</h3>
               <p className={`feature__desc${feature.descBlack ? " feature__desc--black" : ""}`}>
                 {feature.desc[0]}
@@ -176,18 +184,18 @@ export default function Features() {
           className="features__arrow"
           onClick={() => goTo(active - 1)}
           disabled={active === 0}
-          aria-label="이전 기능"
+          aria-label="이전 단계"
         >
           ‹
         </button>
         <div className="features__dots">
           {FEATURES.map((feature, index) => (
             <button
-              key={feature.title}
+              key={feature.step}
               type="button"
               className={`features__dot${index === active ? " is-active" : ""}`}
               onClick={() => goTo(index)}
-              aria-label={`${index + 1}번째 기능: ${feature.title}`}
+              aria-label={`${index + 1}번째 단계: ${feature.title}`}
               aria-current={index === active}
             />
           ))}
@@ -197,7 +205,7 @@ export default function Features() {
           className="features__arrow"
           onClick={() => goTo(active + 1)}
           disabled={active === FEATURES.length - 1}
-          aria-label="다음 기능"
+          aria-label="다음 단계"
         >
           ›
         </button>

@@ -1,8 +1,17 @@
+import Image from "next/image";
+
 const PAIN_POINTS = [
-  '😒" 자영업도 되는지 잘 몰랐어요 "',
-  "🙁“ 조건에 맞는 공고 찾기가 번거로워요 ”",
-  "😞“ 작성할 서류가 막막해서 그냥 포기했어요 ”",
-  '😒" 혼자는 막막하고 컨설팅은 비용이 부담돼요 "',
+  "바쁘고 신경 쓸 시간도 없고",
+  "공고가 나한테 맞는지도 헷갈리고",
+  "챙겨야 할 서류에, 작성할 문서에 복잡하고",
+  "결국 나중에... 미루고 잊게 됩니다.",
+];
+
+const FLOW_STEPS = [
+  { label: "바다야가 알아서 찾고", src: "/images/step-1-search.png", alt: "검색하는 바다야 캐릭터" },
+  { label: "정리도 하고", src: "/images/step-2-analyze.png", alt: "정리하는 바다야 캐릭터" },
+  { label: "작성도 해서", src: "/images/step-3-write.png", alt: "대화하며 작성하는 바다야와 사장님" },
+  { label: "딱 준비해 드릴게요!", src: "/images/step-4-deliver.png", alt: "준비된 서류를 전달하는 바다야" },
 ];
 
 export default function PainPoints() {
@@ -10,13 +19,10 @@ export default function PainPoints() {
     <section className="pain">
       <div className="container">
         <h2 className="pain__title">
-          누구나 가능한 주인없는 돈
-          <br />
-          그동안 왜 못받을까?
+          평균 <em>280만원</em> 혜택을 왜 못받을까?
         </h2>
         <hr className="pain__divider" />
         <div className="pain__card">
-          <p className="pain__card-title">정부 혜택 남들 이야기인줄 알았어요!</p>
           <ul className="pain__list">
             {PAIN_POINTS.map((text) => (
               <li key={text}>{text}</li>
@@ -24,10 +30,27 @@ export default function PainPoints() {
           </ul>
         </div>
         <p className="pain__answer">
-          <span>BADAYA 에서는 누구나</span>
+          기회는 점점 더 많아지는데
           <br />
-          떠 먹는 수준으로&nbsp; 쉽게
+          <span>챙길 여유는 더 없어지는 대표님!</span>
         </p>
+
+        <h3 className="pain__flow-title">대화하고 제출만 하세요</h3>
+
+        <ol className="pain__flow">
+          {FLOW_STEPS.map((step) => (
+            <li key={step.label} className="pain__flow-item">
+              <p className="pain__flow-label">{step.label}</p>
+              <Image
+                className="pain__flow-image"
+                src={step.src}
+                alt={step.alt}
+                width={920}
+                height={1150}
+              />
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
