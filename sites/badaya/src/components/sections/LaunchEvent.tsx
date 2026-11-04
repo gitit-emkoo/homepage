@@ -1,4 +1,3 @@
-import AppDownloadButton from "@/components/AppDownloadButton";
 import ChatTitle from "@/components/ChatTitle";
 import EventVisual from "@/components/EventVisual";
 
@@ -12,7 +11,6 @@ export default function LaunchEvent() {
           떠먹여 드릴게요!
         </ChatTitle>
         <EventVisual />
-        <AppDownloadButton className="btn--event">지원금 빠르게 찾아보기</AppDownloadButton>
       </div>
     </section>
   );

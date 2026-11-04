@@ -26,8 +26,8 @@ export default function ChatTitle({
         className="chat-msg__avatar"
         src="/images/badaya-ai-face.png"
         alt="바다야"
-        width={360}
-        height={360}
+        width={400}
+        height={400}
       />
       <Tag className="chat-msg__bubble">{children}</Tag>
     </div>

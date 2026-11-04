@@ -1096,8 +1096,6 @@ a { color: inherit; }
   object-position: center;
   pointer-events: none;
 }
-.btn--event { width: 82.2%; height: 50px; margin: 18px auto 0; border-radius: 15px; font-size: 16px; }
-
 .floating-cta {
   position: fixed;
   right: max(16px, env(safe-area-inset-right));
@@ -1377,7 +1375,6 @@ a { color: inherit; }
       inset 0 0 32px 20px rgba(109, 178, 246, 0.5),
       inset 0 0 64px 40px rgba(109, 178, 246, 0.32);
   }
-  .btn--event { width: 420px; height: 56px; margin-top: 24px; font-size: 18px; }
   .floating-cta {
     right: 28px;
     bottom: 32px;
@@ -1661,7 +1658,6 @@ a { color: inherit; }
   .event__inner { max-width: 860px; }
   .event__desc { margin-top: 24px; font-size: 20px; line-height: 1.55; }
   .event__visual { width: 440px; max-width: 440px; margin-top: 40px; border-radius: 40px; }
-  .btn--event { width: 400px; height: 60px; font-size: 20px; }
   .floating-cta {
     right: 36px;
     bottom: 40px;
