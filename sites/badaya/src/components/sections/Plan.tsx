@@ -4,15 +4,14 @@ export default function Plan() {
   return (
     <section className="plan">
       <div className="container">
-        <p className="plan__eyebrow">BADAYA PLAN</p>
+        <p className="plan__eyebrow">바다야 이용 안내</p>
         <h2 className="plan__title">
-          대부분 확인조차 하지 않아요 <br />
-          <em>확인하고 준비서류 챙기는건 평생 무료!</em>
+          무료로 시작하고 <em>필요한 만큼 사용하세요</em>
         </h2>
         <Image
           className="plan__image"
           src="/images/plans.png"
-          alt="확인플랜 평생무료, 실전플랜 월 구독형 24,900원, 년 구독형 228,000원"
+          alt="바다야 이용 안내 이미지"
           width={1388}
           height={776}
         />

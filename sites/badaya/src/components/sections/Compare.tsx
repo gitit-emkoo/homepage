@@ -5,9 +5,9 @@ export default function Compare() {
     <section className="compare">
       <div className="container">
         <h2 className="compare__title">
-          BADAYA는&nbsp;
+          <em>커피 값마저 아껴드릴게요</em>
           <br />
-          뭐가 다른 건가요?
+          첫 신청은 무료입니다
         </h2>
         <Image
           className="compare__image"
@@ -17,9 +17,9 @@ export default function Compare() {
           height={800}
         />
         <p className="compare__text">
-          노력과 비용은 100분의 1 이상으로 줄고
+          공짜니까, 일단 무조건 써보세요
           <br />
-          확인부터 신청까지 떠 먹여 주듯 편해져요
+          버리면 손해잖아요
         </p>
       </div>
     </section>

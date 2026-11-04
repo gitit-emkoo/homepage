@@ -33,9 +33,9 @@ export default function Testimonials() {
     <section className="testimonials">
       <div className="container">
         <h2 className="testimonials__title reveal" data-anim="fade-in-down">
-          <em>1500명이 넘는 사장님들의 선택</em>
+          <em>3,000명이 넘는 대표님들이 이미</em>
           <br />
-          진짜 후기가 증명합니다.
+          바다야를 경험하고 있습니다.
         </h2>
         <ul className="testimonials__list">
           {TESTIMONIALS.map((item) => (

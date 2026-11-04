@@ -1,70 +1,58 @@
 import Image from "next/image";
 
+const CONSULT_POINTS = [
+  {
+    label: "대면 부담이 없어요",
+    body: "원하는 시간 언제든 앱만 켜세요",
+  },
+  {
+    label: "비용 부담이 없어요",
+    body: "커피 정도면 충분해요",
+  },
+  {
+    label: "사업 이해도가 높아요",
+    body: "내 사업을 나보다 더 잘 알고 깊게 이해해요",
+  },
+];
+
 export default function Story() {
   return (
-    <>
-      <section className="question">
-        <div className="container">
-          <p className="question__text">
-            혹시 컨설팅 인가요?
-            <br />
-            수수료? 보험 가입? 해야 하다던데...
-          </p>
-        </div>
-      </section>
+    <section className="consult">
+      <div className="container">
+        <h2 className="consult__title">
+          비용은 <em>1%</em>, 전문성은 <em>101%</em>
+        </h2>
+        <p className="consult__lead">
+          대면과 높은 비용이 부담되고
+          <br />
+          일회성으로 사업이해는 떨어집니다.
+        </p>
 
-      <section className="origin">
-        <div className="origin__grid">
-          <Image
-            className="origin__image"
-            src="/images/worried-couple.png"
-            alt="노트북 앞에서 고민하는 두 사람"
-            width={1536}
-            height={1024}
-          />
-          <div className="origin__text">
-            <p className="origin__lead">
-              연락처 남기고 부담스러운 전화 상담&nbsp;
-              <br />
-              수수료, 보험 가입 이런 일 없이
-            </p>
-            <p className="origin__message">
-              누구든 <em className="origin__em">스스로 쉽게 신청할 수 있게</em> 만드는 것
-              <br />
-              <em className="origin__em">바다야가 탄생한 이유입니다</em>
-            </p>
-          </div>
-        </div>
-      </section>
+        <Image
+          className="consult__image"
+          src="/images/consulting-compare.png"
+          alt="부담스러운 컨설팅과 바다야의 편한 대화 비교"
+          width={1007}
+          height={534}
+        />
 
-      <section className="unclaimed">
-        <div className="container unclaimed__grid">
-          <Image
-            className="unclaimed__image"
-            src="/images/documents.png"
-            alt="초기창업패키지 사업계획서 예시"
-            width={1200}
-            height={800}
-          />
-          <p className="unclaimed__text">
-            나는 해당이 안되겠지? 뭘 귀찮게..
-            <br />
-            이렇게 놓치는 주인 없는 돈이
-            <br />
-            매년 약 1,000억 규모
-          </p>
-        </div>
-      </section>
+        <p className="consult__ask">바다야는 어떨까요?</p>
 
-      <section className="loss">
-        <div className="container">
-          <p className="loss__text">
-            주인 없는 돈
-            <br />
-            가만 있으면 무조건 손해잖아요
-          </p>
-        </div>
-      </section>
-    </>
+        <ul className="consult__points">
+          {CONSULT_POINTS.map((point) => (
+            <li key={point.label} className="consult__point">
+              <strong>{point.label}</strong>
+              <span>{point.body}</span>
+            </li>
+          ))}
+        </ul>
+
+        <p className="consult__close">
+          이보다 편한 방법은 아직 없어요.
+          <br />
+          <em>커피 값으로, 모든 혜택을 챙기세요.</em>
+        </p>
+      </div>
+    </section>
   );
 }
