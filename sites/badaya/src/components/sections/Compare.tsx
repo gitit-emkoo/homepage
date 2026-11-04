@@ -1,14 +1,15 @@
+import ChatTitle from "@/components/ChatTitle";
 import Image from "next/image";
 
 export default function Compare() {
   return (
     <section className="compare">
       <div className="container">
-        <h2 className="compare__title">
+        <ChatTitle>
           <em>커피 값마저 아껴드릴게요</em>
           <br />
           첫 신청은 무료입니다
-        </h2>
+        </ChatTitle>
         <Image
           className="compare__image"
           src="/images/comparison.png"

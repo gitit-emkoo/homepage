@@ -1,23 +1,17 @@
 import AppDownloadButton from "@/components/AppDownloadButton";
 import ChatTitle from "@/components/ChatTitle";
-import Image from "next/image";
+import EventVisual from "@/components/EventVisual";
 
 export default function LaunchEvent() {
   return (
     <section className="event">
       <div className="event__inner">
         <ChatTitle>
-          사업하며 당연히 받을 권리를
+          받을수 있는 혜택들
           <br />
-          절대 포기하지 마세요
+          떠먹여 드릴게요!
         </ChatTitle>
-        <Image
-          className="event__image"
-          src="/images/event.png"
-          alt="혜택을 떠 먹여 주는 바다야"
-          width={819}
-          height={1024}
-        />
+        <EventVisual />
         <AppDownloadButton className="btn--event">지원금 빠르게 찾아보기</AppDownloadButton>
       </div>
     </section>

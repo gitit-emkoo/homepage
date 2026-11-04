@@ -44,9 +44,9 @@ export default function Testimonials() {
     <section className="testimonials">
       <div className="container">
         <ChatTitle anim="fade-in-down">
-          <em>3,000명이 넘는 대표님들이 이미</em>
+          <em>3,000명+ 대표님들이 이미</em>
           <br />
-          바다야를 경험하고 있습니다.
+          함께하고 있습니다.
         </ChatTitle>
         <ul className="testimonials__list">
           {TESTIMONIALS.map((item) => (

@@ -24,7 +24,7 @@ export default function Story() {
           비용은 <em>1%</em>, 전문성은 <em>101%</em>
         </ChatTitle>
         <p className="consult__lead">
-          대면과 높은 비용이 부담되고
+          컨설팅은 대면과 높은 비용이 부담되고
           <br />
           일회성으로 사업이해는 떨어집니다.
         </p>

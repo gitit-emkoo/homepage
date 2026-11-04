@@ -11,7 +11,7 @@ export default function BusinessAI() {
           <br />
           평소 바다야의 질문에 대답한 짧은 기록도
           <br />
-          모두 <em>내 사업의 데이터</em>로 쌓여요.
+          <em>내 사업의 데이터</em>로 쌓여요.
         </ChatTitle>
 
         <div className="bizai__visual" aria-hidden="false">
