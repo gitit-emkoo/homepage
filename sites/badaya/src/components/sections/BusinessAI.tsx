@@ -1,3 +1,4 @@
+import ChatTitle from "@/components/ChatTitle";
 import Image from "next/image";
 
 export default function BusinessAI() {
@@ -5,13 +6,13 @@ export default function BusinessAI() {
     <section className="bizai">
       <div className="container">
         <p className="bizai__eyebrow">쓸수록 똑똑해지는 바다야</p>
-        <h2 className="bizai__title">
+        <ChatTitle className="bizai__title">
           신청할때 나눈 대화도
           <br />
           평소 바다야의 질문에 대답한 짧은 기록도
           <br />
           모두 <em>내 사업의 데이터</em>로 쌓여요.
-        </h2>
+        </ChatTitle>
 
         <div className="bizai__visual" aria-hidden="false">
           <div className="bizai__stage">

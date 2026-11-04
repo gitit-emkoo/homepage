@@ -1,3 +1,4 @@
+import FloatingCta from "@/components/FloatingCta";
 import ScrollReveal from "@/components/ScrollReveal";
 import BusinessAI from "@/components/sections/BusinessAI";
 import Compare from "@/components/sections/Compare";
@@ -29,6 +30,7 @@ export default function Home() {
         <Partners />
       </main>
       <Footer />
+      <FloatingCta />
       <ScrollReveal />
     </>
   );

@@ -1,3 +1,4 @@
+import ChatTitle from "@/components/ChatTitle";
 import Image from "next/image";
 
 const CONSULT_POINTS = [
@@ -19,9 +20,9 @@ export default function Story() {
   return (
     <section className="consult">
       <div className="container">
-        <h2 className="consult__title">
+        <ChatTitle>
           비용은 <em>1%</em>, 전문성은 <em>101%</em>
-        </h2>
+        </ChatTitle>
         <p className="consult__lead">
           대면과 높은 비용이 부담되고
           <br />
@@ -53,7 +54,9 @@ export default function Story() {
           </div>
         </div>
 
-        <p className="consult__ask">바다야는 어떨까요?</p>
+        <ChatTitle as="p" className="consult__ask">
+          바다야는 어떨까요?
+        </ChatTitle>
 
         <ul className="consult__points">
           {CONSULT_POINTS.map((point) => (
@@ -64,11 +67,11 @@ export default function Story() {
           ))}
         </ul>
 
-        <p className="consult__close">
+        <ChatTitle as="p" className="consult__close">
           이보다 편한 방법은 아직 없어요.
           <br />
           <em>커피 값으로, 모든 혜택을 챙기세요.</em>
-        </p>
+        </ChatTitle>
       </div>
     </section>
   );

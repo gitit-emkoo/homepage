@@ -1,3 +1,4 @@
+import ChatTitle from "@/components/ChatTitle";
 import FlowProcess from "@/components/FlowProcess";
 import type { CSSProperties, ReactNode } from "react";
 
@@ -73,10 +74,9 @@ export default function PainPoints() {
   return (
     <section className="pain">
       <div className="container">
-        <h2 className="pain__title reveal" data-anim="fade-in-up">
+        <ChatTitle>
           평균 <em>280만원</em> 혜택을 왜 못받을까?
-        </h2>
-        <hr className="pain__divider" />
+        </ChatTitle>
 
         <ul className="pain__list">
           {PAIN_POINTS.map((item) => (
@@ -92,23 +92,23 @@ export default function PainPoints() {
           ))}
         </ul>
 
-        <p
-          className="pain__answer reveal"
-          data-anim="fade-in-up"
+        <ChatTitle
+          as="p"
+          className="pain__answer"
           style={{ "--anim-delay": "320ms" } as CSSProperties}
         >
           기회는 점점 더 많아지는데
           <br />
           <span>챙길 여유는 더 없어지는 대표님!</span>
-        </p>
+        </ChatTitle>
 
-        <h3
-          className="pain__flow-title reveal"
-          data-anim="fade-in-up"
+        <ChatTitle
+          as="h3"
+          className="pain__flow-title"
           style={{ "--anim-delay": "120ms" } as CSSProperties}
         >
           대화하고 제출만 하세요
-        </h3>
+        </ChatTitle>
 
         <FlowProcess />
       </div>

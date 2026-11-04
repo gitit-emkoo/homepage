@@ -1,3 +1,4 @@
+import ChatTitle from "@/components/ChatTitle";
 import Image from "next/image";
 import { Fragment } from "react";
 
@@ -42,11 +43,11 @@ export default function Testimonials() {
   return (
     <section className="testimonials">
       <div className="container">
-        <h2 className="testimonials__title reveal" data-anim="fade-in-down">
+        <ChatTitle anim="fade-in-down">
           <em>3,000명이 넘는 대표님들이 이미</em>
           <br />
           바다야를 경험하고 있습니다.
-        </h2>
+        </ChatTitle>
         <ul className="testimonials__list">
           {TESTIMONIALS.map((item) => (
             <li key={`${item.name}-${item.business}`} className="testimonial">
