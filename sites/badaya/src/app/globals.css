@@ -628,12 +628,9 @@ a { color: inherit; }
 
   /* Hero: 왼쪽 문구 · 오른쪽 하단 루프 영상
      이전 25vw/420px 대비 가로 약 2배(면적 약 4배). 가로 4배는 화면 전체가 되어 우측 하단 배치가 불가. */
-  .hero {
-    position: relative;
-    padding: 96px 0 100px;
-    min-height: clamp(520px, 56vw, 700px);
-  }
+  .hero { padding: 96px 0 100px; }
   .hero__grid {
+    position: relative;
     grid-template-columns: minmax(280px, 460px) 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
@@ -645,7 +642,7 @@ a { color: inherit; }
     align-items: start;
     justify-items: start;
     text-align: left;
-    min-height: clamp(420px, 46vw, 580px);
+    min-height: clamp(420px, 48vw, 560px);
   }
   .hero__title,
   .hero__stats,
@@ -656,8 +653,8 @@ a { color: inherit; }
   .hero__title { font-size: 44px; line-height: 1.35; }
   .hero__visual {
     position: absolute;
-    right: max(24px, calc((100vw - 1120px) / 2 + 24px));
-    bottom: 96px;
+    right: 0;
+    bottom: 0;
     width: min(55vw, 880px);
     max-width: none;
     margin-top: 0;
