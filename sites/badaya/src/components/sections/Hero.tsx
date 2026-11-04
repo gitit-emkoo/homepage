@@ -1,5 +1,6 @@
 import Image from "next/image";
 import AppDownloadButton from "@/components/AppDownloadButton";
+import HeroVisual from "@/components/HeroVisual";
 
 export default function Hero() {
   return (
@@ -11,9 +12,7 @@ export default function Hero() {
           차곡차곡 <em>챙겨드려요</em>
         </h1>
 
-        <div className="hero__visual">
-          <Image src="/images/hero-bear.png" alt="지원금 돈다발을 든 바다야 곰 캐릭터" width={920} height={1152} preload />
-        </div>
+        <HeroVisual />
 
         <div className="hero__cta">
           <AppDownloadButton>내가 받을 지원금 확인하기</AppDownloadButton>
