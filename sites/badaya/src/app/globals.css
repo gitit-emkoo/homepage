@@ -1228,10 +1228,10 @@ a { color: inherit; }
   .testimonials { padding: 110px 40px; }
   .testimonials__title { font-size: 34px; }
   .testimonials__list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    max-width: 1040px;
-    margin-top: 56px;
+    max-width: 960px;
+    margin: 56px auto 0;
   }
   .testimonial { grid-template-columns: 1fr 96px; min-height: 280px; padding: 28px 28px 0; border-radius: 20px; }
   .testimonial__body, .testimonial__author { font-size: 16px; }

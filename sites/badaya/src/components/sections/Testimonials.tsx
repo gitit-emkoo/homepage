@@ -10,13 +10,13 @@ const TESTIMONIALS = [
     ],
     name: "김** 님",
     business: "뷰티 매장운영",
-    avatar: { src: "/images/avatar-1.png", width: 1415, height: 1590 },
+    avatar: { src: "/images/small-business-2.png", width: 1000, height: 1000 },
   },
   {
     body: ["자영업 5년차인데 생각 했던 것보다 신청 가능한 공고가 꽤 많아서 놀랐습니다.\u00a0 알게 된것 만으로도 만족합니다."],
     name: "정** 님",
     business: "음식점 운영",
-    avatar: { src: "/images/avatar-2.png", width: 1510, height: 1569 },
+    avatar: { src: "/images/small-business-1.png", width: 1000, height: 1000 },
   },
   {
     body: [
@@ -24,7 +24,16 @@ const TESTIMONIALS = [
     ],
     name: "남** 님",
     business: "스타트업 대표님",
-    avatar: { src: "/images/avatar-3.png", width: 1237, height: 1515 },
+    avatar: { src: "/images/small-business-3.png", width: 1000, height: 1000 },
+  },
+  {
+    body: [
+      "쇼핑몰 운영하면서 지원금은 남의 일인줄 알았는데",
+      "조건 맞는 공고가 생각보다 많아서 바로 신청까지 진행했어요",
+    ],
+    name: "이** 님",
+    business: "쇼핑몰 운영",
+    avatar: { src: "/images/small-business-4.png", width: 1000, height: 1000 },
   },
 ];
 
@@ -39,7 +48,7 @@ export default function Testimonials() {
         </h2>
         <ul className="testimonials__list">
           {TESTIMONIALS.map((item) => (
-            <li key={item.name} className="testimonial">
+            <li key={`${item.name}-${item.business}`} className="testimonial">
               <p className="testimonial__body reveal" data-anim="fade-in-down">
                 {item.body.map((line, i) => (
                   <Fragment key={i}>
