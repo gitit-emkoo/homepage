@@ -28,13 +28,30 @@ export default function Story() {
           일회성으로 사업이해는 떨어집니다.
         </p>
 
-        <Image
-          className="consult__image"
-          src="/images/consulting-compare.png"
-          alt="부담스러운 컨설팅과 바다야의 편한 대화 비교"
-          width={1007}
-          height={534}
-        />
+        <div className="consult__scene" aria-label="부담스러운 컨설팅과 바다야의 편한 대화 비교">
+          <div className="consult__plate consult__plate--old">
+            <Image
+              className="consult__art consult__art--old"
+              src="/images/consulting-cutout.png"
+              alt="복잡한 서류와 컨설팅에 헷갈려하는 사장님"
+              width={1738}
+              height={1105}
+              sizes="(max-width: 768px) 45vw, 280px"
+              style={{ width: "100%", height: "auto" }}
+            />
+          </div>
+          <div className="consult__plate consult__plate--new">
+            <Image
+              className="consult__art consult__art--new"
+              src="/images/consulting-badaya.png"
+              alt="바다야가 사장님에게 속삭이며 도와주는 모습"
+              width={318}
+              height={357}
+              sizes="(max-width: 768px) 65vw, 400px"
+              style={{ width: "100%", height: "auto" }}
+            />
+          </div>
+        </div>
 
         <p className="consult__ask">바다야는 어떨까요?</p>
 

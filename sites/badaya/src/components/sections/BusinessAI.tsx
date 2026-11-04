@@ -13,13 +13,38 @@ export default function BusinessAI() {
           모두 <em>내 사업의 데이터</em>로 쌓여요.
         </h2>
 
-        <div className="bizai__visual">
-          <Image
-            src="/images/bizai-bear.png"
-            alt="더 똑똑해지는 바다야 캐릭터"
-            width={819}
-            height={1024}
-          />
+        <div className="bizai__visual" aria-hidden="false">
+          <div className="bizai__stage">
+            <span className="bizai__glow" />
+            <span className="bizai__ring bizai__ring--a" />
+            <span className="bizai__ring bizai__ring--b" />
+            <span className="bizai__ring bizai__ring--c" />
+            <span className="bizai__orbit">
+              <i />
+              <i />
+              <i />
+              <i />
+            </span>
+            <span className="bizai__bits" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+              <i />
+              <i />
+              <i />
+              <i />
+              <i />
+            </span>
+            <Image
+              className="bizai__bear"
+              src="/images/bizai-bear.png"
+              alt="더 똑똑해지는 바다야 캐릭터"
+              width={2000}
+              height={2000}
+              sizes="(max-width: 768px) 40vw, 240px"
+              style={{ width: "100%", height: "auto" }}
+            />
+          </div>
         </div>
 
         <p className="bizai__quote">
