@@ -28,8 +28,9 @@ const TESTIMONIALS = [
   },
   {
     body: [
-      "쇼핑몰 운영하면서 지원금은 남의 일인줄 알았는데",
-      "조건 맞는 공고가 생각보다 많아서 바로 신청까지 진행했어요",
+      "온라인 쇼핑몰 운영 중인데 지원금은 나와 상관없다고 생각했어요",
+      "바다야로 조건 맞는 공고를 찾고 신청 서류까지 준비하니",
+      "혼자 하기엔 막막했던 부분이 훨씬 수월해졌습니다",
     ],
     name: "이** 님",
     business: "쇼핑몰 운영",
@@ -49,7 +50,7 @@ export default function Testimonials() {
         <ul className="testimonials__list">
           {TESTIMONIALS.map((item) => (
             <li key={`${item.name}-${item.business}`} className="testimonial">
-              <p className="testimonial__body reveal" data-anim="fade-in-down">
+              <p className="testimonial__body">
                 {item.body.map((line, i) => (
                   <Fragment key={i}>
                     {i > 0 && <br />}
@@ -57,7 +58,7 @@ export default function Testimonials() {
                   </Fragment>
                 ))}
               </p>
-              <p className="testimonial__author reveal" data-anim="fade-in-down">
+              <p className="testimonial__author">
                 {item.name}
                 <br />
                 {item.business}
