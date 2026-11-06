@@ -4,10 +4,11 @@ import { useState } from "react";
 import BrandLogo from "./BrandLogo";
 
 const LINKS = [
-  ["#workflow", "플랫폼 소개"],
   ["#benefits", "중개사 혜택"],
-  ["#guide", "현장 가이드"],
-  ["#apply", "파트너 혜택"],
+  ["#compare", "렌트프리 비교"],
+  ["#simulation", "계산 방식"],
+  ["#owners", "임대인·시행사"],
+  ["#apply", "파트너 신청"],
 ];
 
 export default function Header() {
