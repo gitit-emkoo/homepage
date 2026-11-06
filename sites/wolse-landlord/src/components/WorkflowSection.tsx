@@ -1,10 +1,10 @@
 const steps = [
-  { number: "01", title: "AI 상권 데이터 분석", description: "합리적인 기준 시세 제안", tone: "mint" },
+  { number: "01", title: "상권·시세 데이터 분석", description: "주변 시세를 바탕으로 합리적인 기준 시세를 제안합니다", tone: "mint" },
   { number: "02", title: "계약조건 선택·합의", description: "타입별 매출연동 조건 합의", tone: "violet" },
   { number: "03", title: "전자계약 체결", description: "합의한 조건으로 간편하고 안전한 전자 계약체결", tone: "blue" },
   {
     number: "04",
-    title: "국세청 데이터 연동·월세 산출",
+    title: "공식 매출자료 기준 월세 산출",
     description: "원천 데이터 기준으로 월세 자동 산출",
     tone: "peach",
   },
@@ -21,7 +21,7 @@ const WorkflowSection = () => (
           <br />
           새로운 임대차 거래의 표준을 만듭니다.
         </h2>
-        <p>개인 간 신뢰, 복잡성 문제로 어렵고 불안했던 매출연동 거래가 투명하고 안전해 집니다</p>
+        <p>개인 간 신뢰, 복잡성 문제로 어렵고 불안했던 매출연동 거래가 투명하고 안전해집니다</p>
       </div>
       <div className="workflow-board" aria-label="계약부터 거래 기록까지의 6단계 과정">
         {steps.map((step) => (

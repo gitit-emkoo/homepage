@@ -1,14 +1,12 @@
+import { MARKET_RENT, RENT_PLANS, formatMan, formatPercent, planAmounts } from "@/lib/rent";
+
 const SimulationSection = () => (
   <section className="section simulation" id="simulation">
     <div className="simulation-heading">
-      <h2>
-        {" "}
-        <br />
-        월세 계산 테이블 (예시)
-      </h2>
+      <h2>월세 계산 테이블 (예시)</h2>
     </div>
     <div className="simulation-card">
-      <p className="simulation-note">예시 기준: 주변 시세 월 200만 원</p>
+      <p className="simulation-note">예시 기준: 주변 시세 월 {formatMan(MARKET_RENT)}</p>
       <div className="simulation-table-wrap">
         <table className="simulation-table">
           <thead>
@@ -21,29 +19,54 @@ const SimulationSection = () => (
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>A (안정형)</td>
-              <td>140만 원 (시세 70%)</td>
-              <td>5%</td>
-              <td>140만 원</td>
-              <td>260만 원</td>
-            </tr>
-            <tr>
-              <td>B (균형형)</td>
-              <td>100만 원 (시세 50%)</td>
-              <td>7%</td>
-              <td>100만 원</td>
-              <td>300만 원</td>
-            </tr>
-            <tr>
-              <td>C (성장형)</td>
-              <td>60만 원 (시세 30%)</td>
-              <td>11%</td>
-              <td>60만 원</td>
-              <td>340만 원</td>
-            </tr>
+            {RENT_PLANS.map((plan) => {
+              const amounts = planAmounts(plan);
+              return (
+                <tr key={plan.id}>
+                  <td>
+                    {plan.id} ({plan.name})
+                  </td>
+                  <td>
+                    {formatMan(amounts.base)} (시세 {Math.round(plan.baseRatio * 100)}%)
+                  </td>
+                  <td>{formatPercent(amounts.linkRate)}</td>
+                  <td>{formatMan(amounts.floor)}</td>
+                  <td>{formatMan(amounts.cap)}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
+      </div>
+      <div className="simulation-cards">
+        {RENT_PLANS.map((plan) => {
+          const amounts = planAmounts(plan);
+          return (
+            <article key={plan.id} className="simulation-plan">
+              <h3>
+                {plan.id} ({plan.name})
+              </h3>
+              <p>
+                <b>기본료</b>
+                <span>
+                  {formatMan(amounts.base)} (시세 {Math.round(plan.baseRatio * 100)}%)
+                </span>
+              </p>
+              <p>
+                <b>연동률</b>
+                <span>{formatPercent(amounts.linkRate)}</span>
+              </p>
+              <p>
+                <b>하한</b>
+                <span>{formatMan(amounts.floor)}</span>
+              </p>
+              <p>
+                <b>상한</b>
+                <span>{formatMan(amounts.cap)}</span>
+              </p>
+            </article>
+          );
+        })}
       </div>
       <p className="simulation-deposit">보증금 : 일반 임대차 계약과 동일</p>
     </div>

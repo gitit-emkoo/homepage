@@ -1,25 +1,26 @@
+"use client";
+
 import Image from "next/image";
+import { trackCta } from "@/lib/analytics";
 
 const HeroSection = () => (
   <section className="hero" id="top">
     <div className="hero-inner">
       <h1>
-        매출연동 임대차
+        안 나가던 공실 매물,
         <br />
-        {"또 하나의 "}
-        <span className="hero-accent">중개 옵션이</span>
-        {" 추가 됩니다."}
+        <span className="hero-accent">성사시킬 카드</span>가 하나 더 생깁니다.
       </h1>
       <p className="hero-copy">
-        대형 쇼핑몰 계약 방식에 소형 상가 특성을 더해 더 합리적인 하이브리드 임대차 거래
-        <br />{" "}
+        렌트프리로 깎아주는 대신, 매출연동으로 제안하세요. 임대인은 기본료라는 바닥을 지키고, 임차인은 초기 부담을 낮춥니다.
       </p>
+      <p className="hero-note">대형 쇼핑몰의 매출연동 방식을 소형 상가에 맞게 설계한 하이브리드 임대차</p>
       <div className="hero-actions">
-        <a className="btn btn-dark" href="#apply">
+        <a className="btn btn-dark" href="#apply" onClick={() => trackCta("hero_apply")}>
           {"초기 파트너 신청 "}
           <span>→</span>
         </a>
-        <a className="text-link" href="#benefits">
+        <a className="text-link" href="#benefits" onClick={() => trackCta("hero_benefits")}>
           {"중개사님 혜택 보기 "}
           <span>↓</span>
         </a>

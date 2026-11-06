@@ -12,7 +12,7 @@ const GuideSection = () => (
       <article className="quote-card">
         <blockquote>
           “기존 임대 방식과 병행해서
-          <br />이 방식 으로도 같이 해볼까요?”
+          <br />이 방식으로도 같이 해볼까요?”
         </blockquote>
         <p>계산방식 설명과 함께 임대인의 이점을 명확하게 안내해 주세요.</p>
       </article>
@@ -21,8 +21,8 @@ const GuideSection = () => (
           <li>
             <span>01</span>
             <div>
-              <b>임의 조작 불가능한 기준</b>
-              <p>국세청 원천 데이터(카드매출·현금영수증)를 바탕으로 자동 계산합니다.</p>
+              <b>객관적인 원천 데이터 기준</b>
+              <p>카드매출·현금영수증 등 공식 매출자료를 기준으로 계산합니다.</p>
             </div>
           </li>
           <li>
