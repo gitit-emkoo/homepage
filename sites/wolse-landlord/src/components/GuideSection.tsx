@@ -14,7 +14,7 @@ const GuideSection = () => (
           “기존 임대 방식과 병행해서
           <br />이 방식으로도 같이 해볼까요?”
         </blockquote>
-        <p>계산방식 설명과 함께 임대인의 이점을 명확하게 안내해 주세요.</p>
+        <p>계산 방식 설명과 함께 임대인의 이점을 명확하게 안내해 주세요.</p>
       </article>
       <article className="guide-list-card">
         <ol>

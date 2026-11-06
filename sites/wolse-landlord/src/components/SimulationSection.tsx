@@ -68,7 +68,7 @@ const SimulationSection = () => (
           );
         })}
       </div>
-      <p className="simulation-deposit">보증금 : 일반 임대차 계약과 동일</p>
+      <p className="simulation-deposit">보증금: 일반 임대차 계약과 동일</p>
     </div>
   </section>
 );

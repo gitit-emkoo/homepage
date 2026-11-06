@@ -18,7 +18,7 @@ const flow = [
     icon: "₩",
     title: "입금",
     period: "협의된 날짜",
-    description: "계산서발행일(매월10일)이후, 계약서에 명시한 날짜에 입금이 이뤄집니다.",
+    description: "계산서 발행일(매월 10일) 이후, 계약서에 명시한 날짜에 입금이 이뤄집니다.",
   },
   {
     number: "04",
@@ -38,7 +38,7 @@ const RentCalculationSection = () => (
           <br />
           어떻게 계산되나요?
         </h2>
-        <p>계약 시점과 상관없이 모두 같은 통일된 방식으로, 계산됩니다.</p>
+        <p>계약 시점과 상관없이 모두 같은 통일된 방식으로 계산됩니다.</p>
       </div>
       <div className="rent-flow-grid">
         {flow.map((item) => (
