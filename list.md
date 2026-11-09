@@ -21,6 +21,7 @@
 - 회사 메인
 
 0. www.kwcc.im KWCC (sites/kwcc, 뼈대)
+ https://kwcc.pages.dev/
  — Cloudflare Pages: `npm run build:kwcc` → `sites/kwcc/out`
 
 - 한번에 묶을 페이지(메인 페이지 필요)
