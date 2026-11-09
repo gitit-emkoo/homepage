@@ -80,6 +80,13 @@ export default function Hero() {
       <div className="hero__grid" aria-hidden="true" />
 
       <div className="hero__shell">
+        <div className="topbar topbar--brand-only">
+          <button type="button" className="topbar__brand" onClick={close} aria-label="KWCC 홈">
+            <img src="/kwcc_logo.png" alt="" className="topbar__mark" />
+            <span>KWCC</span>
+          </button>
+        </div>
+
         <div className="hero__stage">
           <div className="hero__copy">
             <p className="hero__eyebrow">Digital Product Studio</p>
@@ -107,9 +114,7 @@ export default function Hero() {
         </div>
 
         <div className="hero__footer">
-          <a className="hero__footer-link" href="https://kwcc.pages.dev/">
-            https://kwcc.pages.dev/
-          </a>
+        
           <span className="hero__footer-copy">
             © {year} {SITE_NAME} · {COMPANY.name}
           </span>
