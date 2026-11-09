@@ -1,8 +1,12 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
-import { NAV_LINKS } from "@/lib/site";
+import { useCallback, useEffect, useState } from "react";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import ModalPanel from "@/components/ModalPanel";
+import Portfolio from "@/components/Portfolio";
+import { COMPANY, SITE_NAME } from "@/lib/site";
 
 const LogoStage = dynamic(() => import("@/components/LogoStage"), {
   ssr: false,
@@ -34,14 +38,14 @@ const HOTSPOTS = [
   },
 ] as const;
 
-function scrollToId(id: string) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+type PanelId = (typeof HOTSPOTS)[number]["id"];
 
 export default function Hero() {
   const [reduceMotion, setReduceMotion] = useState(false);
+  const [active, setActive] = useState<PanelId | null>(null);
+  const year = new Date().getFullYear();
+
+  const close = useCallback(() => setActive(null), []);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -50,6 +54,17 @@ export default function Hero() {
     mq.addEventListener("change", apply);
     return () => mq.removeEventListener("change", apply);
   }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.add("lock-scroll");
+    document.body.classList.add("lock-scroll");
+    return () => {
+      document.documentElement.classList.remove("lock-scroll");
+      document.body.classList.remove("lock-scroll");
+    };
+  }, []);
+
+  const activeMeta = HOTSPOTS.find((item) => item.id === active);
 
   return (
     <header className="hero" id="top">
@@ -65,29 +80,6 @@ export default function Hero() {
       <div className="hero__grid" aria-hidden="true" />
 
       <div className="hero__shell">
-        <nav className="topbar" aria-label="주요 메뉴">
-          <ul className="topbar__links">
-            {NAV_LINKS.map((link) => (
-              <li key={link.id}>
-                <a
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToId(link.id);
-                  }}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <a className="topbar__brand" href="#top" aria-label="KWCC 홈">
-            <img src="/kwcc_logo.png" alt="" className="topbar__mark" />
-            <span>KWCC</span>
-          </a>
-          <span className="topbar__meta">Glass · Möbius</span>
-        </nav>
-
         <div className="hero__stage">
           <div className="hero__copy">
             <p className="hero__eyebrow">Digital Product Studio</p>
@@ -102,8 +94,9 @@ export default function Hero() {
               <button
                 key={item.id}
                 type="button"
-                className="hotspot"
-                onClick={() => scrollToId(item.id)}
+                className={`hotspot${active === item.id ? " hotspot--active" : ""}`}
+                onClick={() => setActive(item.id)}
+                aria-expanded={active === item.id}
               >
                 <span className="hotspot__index">{item.index}</span>
                 <span className="hotspot__label">{item.label}</span>
@@ -114,10 +107,25 @@ export default function Hero() {
         </div>
 
         <div className="hero__footer">
-          <span>www.kwcc.im</span>
-          <span className="scroll-cue">Scroll</span>
+          <a className="hero__footer-link" href="https://kwcc.pages.dev/">
+            https://kwcc.pages.dev/
+          </a>
+          <span className="hero__footer-copy">
+            © {year} {SITE_NAME} · {COMPANY.name}
+          </span>
         </div>
       </div>
+
+      <ModalPanel
+        open={active !== null}
+        index={activeMeta?.index ?? ""}
+        title={activeMeta?.label ?? ""}
+        onClose={close}
+      >
+        {active === "portfolio" && <Portfolio />}
+        {active === "about" && <About />}
+        {active === "contact" && <Contact />}
+      </ModalPanel>
     </header>
   );
 }
