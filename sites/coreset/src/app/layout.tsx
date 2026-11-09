@@ -36,7 +36,10 @@ export const metadata: Metadata = {
     images: ["/images/og.jpg"],
   },
   verification: {
-    google: "ncfRSo5zHMnVgC8MqMy_z-j8GypBklnB61c80nB8Ca0",
+    google: [
+      "ncfRSo5zHMnVgC8MqMy_z-j8GypBklnB61c80nB8Ca0",
+      "nfOHT08x7M2Q4qvKhwyHA1x-RxdFIezq-FERCR-1u88",
+    ],
     other: {
       "naver-site-verification": "b7428ad53f70f1ff2951dec93fff0845a983b63f",
       "facebook-domain-verification": "wocw3h2ihtp71f4105aoitiozu9sha",
