@@ -18,6 +18,11 @@
  https://reconnect-an9.pages.dev/
 
 
+- 회사 메인
+
+0. www.kwcc.im KWCC (sites/kwcc, 뼈대)
+ — Cloudflare Pages: `npm run build:kwcc` → `sites/kwcc/out`
+
 - 한번에 묶을 페이지(메인 페이지 필요)
 
 9. 바다야 진단페이지

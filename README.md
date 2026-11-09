@@ -18,7 +18,8 @@ homepage/
 │   ├── coreset/        # www.coreset.im (디자인 새로 작업)
 │   ├── pickplay/       # pickplay.waveon.me (앱 소개 + 약관·개인정보·고객센터)
 │   ├── diagnosis/      # 바다야 진단 4종 묶음 + 새 메인 (99047, bdy, bdy2, bdy3)
-│   └── reconnect/      # 리커넥트 (reconnect.waveon.me, 디자인 새로 작업)
+│   ├── reconnect/      # 리커넥트 (reconnect.waveon.me, 디자인 새로 작업)
+│   └── kwcc/           # www.kwcc.im 회사 홈 (뼈대)
 ├── tools/
 │   ├── waveon-extract.mjs    # 예전 Waveon 페이지(블록형) → 디자인 데이터·이미지 추출
 │   ├── waveon-text.mjs       # 추출 데이터에서 긴 글(약관 등) 꺼내기
@@ -32,8 +33,8 @@ homepage/
 | 명령어 | 설명 |
 | --- | --- |
 | `npm install` | 처음 한 번 (새 사이트를 추가했을 때도 한 번) |
-| `npm run dev:badaya` / `npm run dev:passbook` | 해당 사이트 개발 서버 |
-| `npm run build:badaya` / `npm run build:passbook` | 해당 사이트 배포 파일(`out/`) 생성 |
+| `npm run dev:badaya` / `npm run dev:passbook` / `npm run dev:kwcc` | 해당 사이트 개발 서버 |
+| `npm run build:badaya` / `npm run build:passbook` / `npm run build:kwcc` | 해당 사이트 배포 파일(`out/`) 생성 |
 | `npm run build:all` | 모든 사이트 빌드 |
 | `npm run lint:all` | 모든 사이트 코드 검사 |
 

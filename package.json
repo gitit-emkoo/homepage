@@ -23,6 +23,8 @@
     "build:diagnosis": "npm run build -w diagnosis",
     "dev:reconnect": "npm run dev -w reconnect",
     "build:reconnect": "npm run build -w reconnect",
+    "dev:kwcc": "npm run dev -w kwcc",
+    "build:kwcc": "npm run build -w kwcc",
     "build:all": "npm run build --workspaces",
     "lint:all": "npm run lint --workspaces"
   },
